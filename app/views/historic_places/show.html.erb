@@ -1,0 +1,23 @@
+<p>
+  <b>Title:</b>
+  <%=h @historic_place.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @historic_place.description %>
+</p>
+
+<p>
+  <b>Lat:</b>
+  <%=h @historic_place.lat %>
+</p>
+
+<p>
+  <b>Lng:</b>
+  <%=h @historic_place.lng %>
+</p>
+
+
+<%= link_to 'Edit', edit_historic_place_path(@historic_place) %> |
+<%= link_to 'Back', historic_places_path %>

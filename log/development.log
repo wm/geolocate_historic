@@ -1,0 +1,64 @@
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-31 21:31:38) [GET]
+
+ActionController::RoutingError (No route matches "/historic_places/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 21:33:24) [GET]
+  [4;36;1mHistoricPlace Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: historic_places: SELECT * FROM "historic_places" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: historic_places: SELECT * FROM "historic_places" ):
+  app/controllers/historic_places_controller.rb:5:in `index'
+
+Rendered rescues/_trace (41.1ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateHistoricPlaces (20100401013217)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "historic_places" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "lat" float, "lng" float, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100401013217')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("historic_places")[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 21:33:45) [GET]
+  [4;36;1mHistoricPlace Load (1.1ms)[0m   [0;1mSELECT * FROM "historic_places" [0m
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 127ms (View: 122, DB: 1) | 200 OK [http://localhost/historic_places/]
+
+
+Processing HistoricPlacesController#new (for 127.0.0.1 at 2010-03-31 21:33:48) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/new
+Completed in 23ms (View: 18, DB: 0) | 200 OK [http://localhost/historic_places/new]
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 22:22:37) [GET]
+  [4;36;1mHistoricPlace Load (0.4ms)[0m   [0;1mSELECT * FROM "historic_places" [0m
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 55ms (View: 49, DB: 0) | 200 OK [http://localhost/historic_places/]

@@ -1,0 +1,26 @@
+<h1>Listing historic_places</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Lat</th>
+    <th>Lng</th>
+  </tr>
+
+<% @historic_places.each do |historic_place| %>
+  <tr>
+    <td><%=h historic_place.title %></td>
+    <td><%=h historic_place.description %></td>
+    <td><%=h historic_place.lat %></td>
+    <td><%=h historic_place.lng %></td>
+    <td><%= link_to 'Show', historic_place %></td>
+    <td><%= link_to 'Edit', edit_historic_place_path(historic_place) %></td>
+    <td><%= link_to 'Destroy', historic_place, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New historic_place', new_historic_place_path %>

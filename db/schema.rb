@@ -9,11 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100401013217) do
+ActiveRecord::Schema.define(:version => 20100401023500) do
 
   create_table "historic_places", :force => true do |t|
     t.string   "title"
     t.text     "description"
+    t.float    "lat"
+    t.float    "lng"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "visitors", :force => true do |t|
     t.float    "lat"
     t.float    "lng"
     t.datetime "created_at"

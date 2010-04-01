@@ -3,8 +3,8 @@ class CreateHistoricPlaces < ActiveRecord::Migration
     create_table :historic_places do |t|
       t.string :title
       t.text :description
-      t.float :lat
-      t.float :lng
+      t.column "lat", :decimal, :precision => 15, :scale => 10
+      t.column "lng", :decimal, :precision => 15, :scale => 10
 
       t.timestamps
     end

@@ -14,15 +14,15 @@ ActiveRecord::Schema.define(:version => 20100401023500) do
   create_table "historic_places", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.float    "lat"
-    t.float    "lng"
+    t.decimal  "lat",         :precision => 15, :scale => 10
+    t.decimal  "lng",         :precision => 15, :scale => 10
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "visitors", :force => true do |t|
-    t.float    "lat"
-    t.float    "lng"
+    t.decimal  "lat",        :precision => 15, :scale => 10
+    t.decimal  "lng",        :precision => 15, :scale => 10
     t.datetime "created_at"
     t.datetime "updated_at"
   end

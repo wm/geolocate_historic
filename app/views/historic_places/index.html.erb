@@ -1,25 +1,47 @@
-<h1>Listing historic_places</h1>
+<script>
+sc = function(position) {  
+	getPlacesByLocation(position.coords.latitude,position.coords.longitude);
+  $('#notice').hide();
+  $('#content').show();
+}
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Lat</th>
-    <th>Lng</th>
-  </tr>
+ec = function(errors) {  
+	$('#notice h2').html("Error ...");
+}
 
-<% @historic_places.each do |historic_place| %>
-  <tr>
-    <td><%=h historic_place.title %></td>
-    <td><%=h historic_place.lat %></td>
-    <td><%=h historic_place.lng %></td>
-    <td><%= link_to 'Show', historic_place %></td>
-    <td><%= link_to 'Edit', edit_historic_place_path(historic_place) %></td>
-    <td><%= link_to 'Destroy', historic_place, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+$(document).ready(function() {
+  $('#content').hide();
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(sc,ec);
+		$('#notice h2').html("Finding your location - one moment please ...");
+  }else{
+    $('#notice h2').html("This browser is not supported ...");
+  }
+});
+</script>
+<div id="notice">
+	<h2>We need permission to determine your location...</h2>
+</div>
+<div id='content'>
+	<table id='historic_places'>
+		<thead>
+		  <tr>
+		    <th>Title</th>
+		    <th>Description</th>
+		    <th>Lat</th>
+		    <th>Lng</th>
+		  </tr>
+	  </thead>
+	  <tbody>
+	<% @historic_places.each do |historic_place| %>
+		  <tr>
+		    <td><%=h historic_place.title %></td>
+		    <td><%=h historic_place.lat %></td>
+		    <td><%=h historic_place.lng %></td>
+		  </tr>
+	<% end %>
+	  </tody>
+	</table>
 
-<br />
-
-<%= link_to 'New historic_place', new_historic_place_path %>
+	<br />
+</div>

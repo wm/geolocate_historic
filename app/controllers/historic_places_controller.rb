@@ -2,7 +2,11 @@ class HistoricPlacesController < ApplicationController
   # GET /historic_places
   # GET /historic_places.xml
   def index
-    @historic_places = HistoricPlace.all(:select => 'id,title,lat,lng', :limit => 10)
+    if params[:lat]
+      @historic_places = HistoricPlace.all(:select => 'id,title,lat,lng', :limit => 10)
+    else
+      @historic_places = []
+    end
 
     respond_to do |format|
       format.html # index.html.erb

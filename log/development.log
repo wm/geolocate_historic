@@ -1,0 +1,116 @@
+# Logfile created on Wed Mar 31 23:13:09 -0400 2010
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 23:17:08) [GET]
+  [4;36;1mHistoricPlace Load (1.0ms)[0m   [0;1mSELECT id,title,lat,lng FROM "historic_places" LIMIT 10[0m
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 118ms (View: 112, DB: 1) | 200 OK [http://localhost/historic_places]
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 23:20:30) [GET]
+  [4;35;1mHistoricPlace Load (0.9ms)[0m   [0mSELECT id,title,lat,lng FROM "historic_places" LIMIT 10[0m
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 49ms (View: 43, DB: 1) | 200 OK [http://localhost/historic_places]
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 23:30:48) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/historic_places]
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 23:38:52) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/historic_places]
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 23:39:04) [GET]
+  Parameters: {"lng"=>"-71.075311", "lat"=>"42.4334031"}
+  [4;36;1mHistoricPlace Load (0.9ms)[0m   [0;1mSELECT id,title,lat,lng FROM "historic_places" LIMIT 10[0m
+Completed in 50ms (View: 44, DB: 1) | 200 OK [http://localhost/historic_places?lat=42.4334031&lng=-71.075311]
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 23:39:36) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/historic_places]
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 23:40:37) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/historic_places]
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 23:41:03) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/historic_places]
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 23:41:05) [GET]
+  Parameters: {"lng"=>"-71.0751015", "lat"=>"42.4329074"}
+  [4;35;1mHistoricPlace Load (1.0ms)[0m   [0mSELECT id,title,lat,lng FROM "historic_places" LIMIT 10[0m
+Completed in 12ms (View: 5, DB: 1) | 200 OK [http://localhost/historic_places?lat=42.4329074&lng=-71.0751015]
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 23:41:07) [GET]
+  Parameters: {"lng"=>"-71.075311", "lat"=>"42.4334031"}
+  [4;36;1mHistoricPlace Load (1.1ms)[0m   [0;1mSELECT id,title,lat,lng FROM "historic_places" LIMIT 10[0m
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://localhost/historic_places?lat=42.4334031&lng=-71.075311]
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 23:41:07) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 82ms (View: 2, DB: 0) | 200 OK [http://localhost/historic_places]
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 23:41:10) [GET]
+  Parameters: {"lng"=>"-71.075311", "lat"=>"42.4334031"}
+  [4;35;1mHistoricPlace Load (1.0ms)[0m   [0mSELECT id,title,lat,lng FROM "historic_places" LIMIT 10[0m
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/historic_places?lat=42.4334031&lng=-71.075311]
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 23:47:28) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/historic_places]
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 23:47:35) [GET]
+  Parameters: {"lng"=>"-71.0753282", "lat"=>"42.4334183"}
+  [4;36;1mHistoricPlace Load (0.9ms)[0m   [0;1mSELECT id,title,lat,lng FROM "historic_places" LIMIT 10[0m
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/historic_places?lat=42.4334183&lng=-71.0753282]
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 23:50:18) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/historic_places]
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 23:50:26) [GET]
+  Parameters: {"lng"=>"-71.0751015", "lat"=>"42.4329074"}
+  [4;35;1mHistoricPlace Load (0.9ms)[0m   [0mSELECT id,title,lat,lng FROM "historic_places" LIMIT 10[0m
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/historic_places?lat=42.4329074&lng=-71.0751015]
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 23:57:15) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/historic_places]
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 23:57:27) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/historic_places]
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-03-31 23:57:33) [GET]
+  Parameters: {"lng"=>"-71.0751015", "lat"=>"42.4329074"}
+  [4;36;1mHistoricPlace Load (1.0ms)[0m   [0;1mSELECT id,title,lat,lng FROM "historic_places" LIMIT 10[0m
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/historic_places?lat=42.4329074&lng=-71.0751015]

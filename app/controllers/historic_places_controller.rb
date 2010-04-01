@@ -2,11 +2,12 @@ class HistoricPlacesController < ApplicationController
   # GET /historic_places
   # GET /historic_places.xml
   def index
-    @historic_places = HistoricPlace.all
+    @historic_places = HistoricPlace.all(:select => 'id,title,lat,lng', :limit => 10)
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @historic_places }
+      format.json  { render :json => @historic_places }
     end
   end
 

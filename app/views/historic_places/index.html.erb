@@ -11,7 +11,6 @@
 <% @historic_places.each do |historic_place| %>
   <tr>
     <td><%=h historic_place.title %></td>
-    <td><%=h historic_place.description %></td>
     <td><%=h historic_place.lat %></td>
     <td><%=h historic_place.lng %></td>
     <td><%= link_to 'Show', historic_place %></td>

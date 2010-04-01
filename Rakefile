@@ -9,12 +9,4 @@ require 'rake/rdoctask'
 
 require 'tasks/rails'
 
-namespace :hpdata do
-  require 'csv'
-  
-  desc "parse csv file into db"
-  task :parse do
-    `./script/runner lib/ne_csv_parser.rb './ne_landmarks.csv'`
-  end
-end
   

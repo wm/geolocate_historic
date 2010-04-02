@@ -73,11 +73,13 @@ getPlacesByLocation = function(lat,lng){
         hp = this['historic_place'];
 				var marker = addPoint(index,hp.lat,hp.lng,hp.title,'');
         var letter = String.fromCharCode("A".charCodeAt(0) + index);
-        var row = "<tr id='hp_"+hp.id+"'><td>"+letter+". <a id='icon_"+letter+"' href='#'>"+hp.title+"</a></td></tr>";
-        // Add the new row to the table 
+	      var title = hp.title;
+	
+        var row = "<tr id='hp_"+hp.id+"'><td>"+letter+". <a id='icon_"+letter+"' href='#'>"+title+"</a></td></tr>";
+
         $('table#historic_places tbody:first').append(row);
         $('#icon_'+letter).click(function(){
-	        marker.openInfoWindowHtml("<h3>"+letter+". "+hp.title+"</h3>");
+	        marker.openInfoWindowHtml("<h3>"+letter+". "+title+"</h3>");
         });
         
       });

@@ -52,3 +52,11 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
+#content {
+  float: left;
+}
+
+#map_area {
+	float: left;
+}
+

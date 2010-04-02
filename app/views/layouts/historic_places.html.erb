@@ -5,11 +5,15 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>HistoricPlaces: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
-  <%= javascript_include_tag 'jquery' %>
-  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag 'jquery-themes/css/mint-choc/jquery-ui-1.8.custom' %>
+  <%= stylesheet_link_tag 'ne_historic' %>
+  <%= javascript_include_tag 'jquery-themes/jquery-1.4.2.min' %>
+  <%= javascript_include_tag 'jquery-themes/jquery-ui-1.8.custom.min' %>
+  <%= javascript_include_tag 'ne_historic' %>
+
+  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=<%= @gkey %>" type="text/javascript"></script>
 </head>
-<body>
+<body onload="initialize()" onunload="GUnload()">
 
 <p style="color: green"><%= flash[:notice] %></p>
 

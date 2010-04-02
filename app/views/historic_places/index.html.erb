@@ -1,47 +1,10 @@
-<script>
-sc = function(position) {  
-	getPlacesByLocation(position.coords.latitude,position.coords.longitude);
-  $('#notice').hide();
-  $('#content').show();
-}
-
-ec = function(errors) {  
-	$('#notice h2').html("Error ...");
-}
-
-$(document).ready(function() {
-  $('#content').hide();
-  if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(sc,ec);
-		$('#notice h2').html("Finding your location - one moment please ...");
-  }else{
-    $('#notice h2').html("This browser is not supported ...");
-  }
-});
-</script>
-<div id="notice">
-	<h2>We need permission to determine your location...</h2>
+<div id="map_dialog"></div>
+<div id='map_area'>
+	<div id="map_canvas" style="width: 900px; height: 500px"></div>
 </div>
 <div id='content'>
 	<table id='historic_places'>
-		<thead>
-		  <tr>
-	      <th>id</th>
-		    <th>Title</th>
-		    <th>Lat</th>
-		    <th>Lng</th>
-		  </tr>
-	  </thead>
-	  <tbody>
-	<% @historic_places.each do |historic_place| %>
-		  <tr>
-		    <td><%=h historic_place.title %></td>
-		    <td><%=h historic_place.lat %></td>
-		    <td><%=h historic_place.lng %></td>
-		  </tr>
-	<% end %>
-	  </tody>
+	  <tbody></tbody>
 	</table>
-
 	<br />
 </div>

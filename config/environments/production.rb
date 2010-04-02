@@ -1,3 +1,6 @@
+# Google API key for http://will.heroku.com
+GAPI_KEY = "ABQIAAAASIU62soxGRmBBYZUgLu74xQBCB4ejOxzvsV68-yLL5UR5mea9hRoZgT5PSx4TAFYn17EtlgBgHSS5w"
+
 # Settings specified here will take precedence over those in config/environment.rb
 
 # The production environment is meant for finished, "live" apps.

@@ -1,3 +1,6 @@
+# Google API key for http://localhost
+GAPI_KEY = "ABQIAAAASIU62soxGRmBBYZUgLu74xT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSOIQ58E-srM2cX91TLvVEuzZn1QQ"
+
 # Settings specified here will take precedence over those in config/environment.rb
 
 # In the development environment your application's code is reloaded on

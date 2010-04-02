@@ -3,10 +3,10 @@ class HistoricPlacesController < ApplicationController
   # GET /historic_places.xml
   def index
     if params[:lat] && params[:lng]
-      select = "id,title,lat,lng,((ACOS(SIN(#{params[:lat]} * PI() / 180) * SIN(lat * PI() / 180) + COS(#{params[:lat]} * PI() / 180) * COS(lat * PI() / 180) * COS((#{params[:lng]} - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) AS `distance`"
-      group = "id HAVING `distance` <= 3"
-      order = "`distance` ASC"
-      @historic_places = HistoricPlace.all(:select => select, :group => group, :order => '`distance` ASC')
+      select = "id,title,lat,lng"
+      group = "id,title,lat,lng HAVING ((ACOS(SIN(#{params[:lat]} * PI() / 180) * SIN(lat * PI() / 180) + COS(#{params[:lat]} * PI() / 180) * COS(lat * PI() / 180) * COS((#{params[:lng]} - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3"
+      order_by = "((ACOS(SIN(#{params[:lat]} * PI() / 180) * SIN(lat * PI() / 180) + COS(#{params[:lat]} * PI() / 180) * COS(lat * PI() / 180) * COS((#{params[:lng]} - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515)"
+      @historic_places = HistoricPlace.all(:select => select, :group => group, :order => order_by)
     else
       @historic_places = []
     end

@@ -18,3 +18,7 @@ Download list of historic places in the northeast region provided by the Nationa
 ... 
 
 "Read more here":http://www.cs.tufts.edu/comp/120/assignments/a3.php
+
+To parse the data file run
+
+./script/runner ./lib/ne_parser.rb csv-file.csv

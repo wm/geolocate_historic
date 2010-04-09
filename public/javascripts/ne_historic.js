@@ -6,7 +6,7 @@ initialize = function() {
     navigator.geolocation.getCurrentPosition(sc,ec);
   }else{	
     hide_dialog("#map_dialog");
-		show_dialog("#map_dialog","Notice","This browser is not supported, sorry!");
+		show_dialog("#map_dialog","Notice","This browser is not supported, sorry! Why not try <a href='http://getfirefox.com'>something better</a>");
   }
 }
 
@@ -20,7 +20,7 @@ sc = function(position) {
 }
 
 ec = function(error) {
-	show_dialog("Error","Unable to determine your location! Why not try <a href='http://getfirefox.com'>something better</a>");
+	show_dialog("Error","Unable to determine your location!");
 }
 
 show_dialog = function(id,title,html){
@@ -31,6 +31,7 @@ hide_dialog = function(id){
 	$(id).dialog('close')
 }
 
+// adds a point to the map 
 addPoint = function(index,lat,lng,title,url){
 	var point = new GLatLng(lat,lng);
 	var marker = new createMarker(point,index,title,url);
@@ -38,6 +39,7 @@ addPoint = function(index,lat,lng,title,url){
   return marker;
 }
 
+// add the locaiton of the user browsing
 addHomePoint = function(lat,lng){
 	var point = new GLatLng(lat,lng);
 	var homeIcon = new GIcon();
@@ -82,6 +84,10 @@ getPlacesByLocation = function(lat,lng){
     dataType: 'json',
     data: {lat: lat, lng: lng},
     success: function(data) {
+	    // add an empty table
+			var places = "<table id='historic_places'><tbody></tbody></table>";
+      $('#content').html(places);
+
       $(data).each(function(index,element) {
         // Construct the new row.
         var hp = this['historic_place'];
@@ -90,6 +96,8 @@ getPlacesByLocation = function(lat,lng){
         var letter = String.fromCharCode("A".charCodeAt(0) + index);
 	      var title = hp.title;
         var row = "<tr id='hp_"+hp.id+"'><td>"+letter+". <a id='icon_"+letter+"' href='#'>"+title+"</a></td></tr>";
+        
+        //add new row to table and give it a callback function
         $('table#historic_places tbody:first').append(row);
         $('#icon_'+letter).click(function(){
 	        var openFnCallback = function() {$('.map_icon_window_area').load(url);};

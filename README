@@ -1,243 +1,90 @@
-== Welcome to Rails
+<h1> Assignment 3 for COMP 120 @ Tufts </h1>
+<a href="http://www.cs.tufts.edu/comp/120/assignments/a3.php">link to actual assignment</a>
+<h2>Assignment 3: Geolocation and National Historic Places</h2>
+<h3>Due: Thursday, April 15th at 11:30 PM</h3>
 
-Rails is a web-application framework that includes everything needed to create 
-database-backed web applications according to the Model-View-Control pattern. 
+<h3>Overview</h3>
 
-This pattern splits the view (also called the presentation) into "dumb" templates
-that are primarily responsible for inserting pre-built data in between HTML tags.
-The model contains the "smart" domain objects (such as Account, Product, Person,
-Post) that holds all the business logic and knows how to persist themselves to
-a database. The controller handles the incoming requests (such as Save New Account,
-Update Product, Show Post) by manipulating the model and directing data to the view.
+<p>Geolocation is currently the hottest tech trend and area of development.  In this assignment, you will build a Ruby on Rails web application with desktop and mobile interfaces that detects and stores your location, and returns the nearest historic places within three (3) miles (relative distance).  We will only use historic places in the northeast region provided by the <a href="http://www.nps.gov/nr/" target="_blank">National Register of Historic Places</a>.  In addition, this application returns a list of your last ten (10) locations in XML or JSON format.</p>
 
-In Rails, the model is handled by what's called an object-relational mapping
-layer entitled Active Record. This layer allows you to present the data from
-database rows as objects and embellish these data objects with business logic
-methods. You can read more about Active Record in
-link:files/vendor/rails/activerecord/README.html.
+<h3>Requirements</h3>
+<ul>
+<li>Two models will be necessary: one for historic place and one for user's location.  For the latitude and longitude in each model, use decimal data type with precision = 10, scale = 6</li>
+<li>Download list of historic places in the northeast region provided by the National Register of Historic Places: <a href="ne_landmarks.zip"><code>ne_landmarks.zip</code></a> (CSV, comma-separated, file compressed to ZIP).  The list has 18,246 records.  Write a Ruby script to parse the CSV file and create a SQL file of insert statements for the historic places table in MySQL.  The CSV file has four (4) columns:
+<ol>
+<li>Longitude</li>
 
-The controller and view are handled by the Action Pack, which handles both
-layers by its two parts: Action View and Action Controller. These two layers
-are bundled in a single package due to their heavy interdependence. This is
-unlike the relationship between the Active Record and Action Pack that is much
-more separate. Each of these packages can be used independently outside of
-Rails.  You can read more about Action Pack in
-link:files/vendor/rails/actionpack/README.html.
+<li>Latitude</li>
+<li>Name (of historic place)</li>
+<li>Info (on historic place that you can use for popup balloon when its marker on Google Map is clicked)</li>
+</ol>
+</li>
+<li>You will need to use the Google Maps API.  <a href="https://wikis.uit.tufts.edu/confluence/display/comp15004visualization/API+Programming">Please refer to my guest lecture to Sara Su's COMP 150-VIZ: Visualization class on how to use the Google Maps API</a>.</li>
+<li>There are couple of ways to determine a user's location on a web browser:
+<ol>
+<li>Geocode the client's (your computer's) IP address via free service such as <a href="http://www.hostip.info/" target="_blank">hostip.info</a>.  This will work on all browsers including Safari and Microsoft Internet Explorer, but may not be very accurate!</li>
 
+<li>Use the JavaScript <a href="https://developer.mozilla.org/En/Using_geolocation" target="_blank"><code>navigator.geolocation</code></a> object.  If you use a desktop/laptop browser, it will use the Google Location Services.  If you use Safari on an iPhone, it will use your coordinates via GPS!  The drawback is that the <code>navigator.geolocation</code> is not supported in Microsoft Internet Explorer or in Safari (desktop/laptop).</li>
+</ol>
+</li>
+<li>Make your starting URL to be <code>http://localhost:9000/a3</code>.  On accessing the page, user shall be prompted to share location.  See my MBTA map example: <a href="/~mchow/mbta_gmap/">http://www.cs.tufts.edu/~mchow/mbta_gmap/</a></li>
+<li>After user shares location (i.e., the latitude and longitude of user are known), find the historic places within three (3) miles of the user's location and store the location into the table of users' locations</li>
 
-== Getting Started
+<li>The view shall contain:
+<ol>
+<li>A Google Map with a marker denoting the user's location and markers for each nearby historic place.  The map shall be centered on the user's location.  The markers for the user's location for each of the historic places shall be different (e.g., one red, one blue).</li>
+<li>A table of distances to each nearby historic place sorted by the closest historic place.</li>
+<li>Two links to download user's last ten (10) locations with created-on date: one for XML format and one for JSON format.</li>
+</ol>
+</li>
+<li>Enable the web application to be accessed from multiple devices, at the very least, one for standard web browser and one for mobile browser (i.e., iPhone).  Options:
+<ol>
+<li>Have multiple stylesheets, all combined by adding a <code>:all, :cache =&gt; true</code> to your <code>stylesheet_link_tag</code></li>
 
-1. At the command prompt, start a new Rails application using the <tt>rails</tt> command
-   and your application name. Ex: rails myapp
-2. Change directory into myapp and start the web server: <tt>script/server</tt> (run with --help for options)
-3. Go to http://localhost:3000/ and get "Welcome aboard: You're riding the Rails!"
-4. Follow the guidelines to start developing your application
+<li>Use a mobile framework such as <a href="http://code.google.com/p/iui/" target="_blank">iUI</a> or <a href="http://www.jqtouch.com/" target="_blank">jQTouch</a></li>
+</ol>
+</li>
+</ul>
 
+<h3>Grading</h3>
+<ol>
+<li><strong>(1 point)</strong> Ruby script to parse CSV and create SQL file of insert statements.  An alternative method is also accepted (e.g., bulk-load directly into MySQL) but please note what you did.</li>
 
-== Web Servers
+<li><strong>(1 point)</strong> Use either two stylesheets (one for standard browser and one for mobile / device browser) or a development framework like iUI or jQTouch</li>
+<li><strong>(1 point)</strong> Detect user's location and return latitude and longitude</li>
+<li><strong>(1 point)</strong> Store user's location</li>
+<li><strong>(2 points)</strong> View with Google Map denoting the user's location and markers for each nearby historic place</li>
+<li><strong>(1 point)</strong> Two links to download user's last ten (10) locations with created-on date: one for XML format and one for JSON format</li>
 
-By default, Rails will try to use Mongrel if it's are installed when started with script/server, otherwise Rails will use WEBrick, the webserver that ships with Ruby. But you can also use Rails
-with a variety of other web servers.
+<li><strong>(1 point)</strong> Configure the <code>routes.rb</code> file so that the starting page is <code>http://localhost:9000/a3</code></li>
+<li><strong>(1 point)</strong> Use correct algorithm to find the historic places within three (3) miles of the user's location</li>
+<li><strong>(1 point)</strong> Answer three questions:
+<ol>
+<li>How long does it take (in seconds) to find all the historic places?</li>
 
-Mongrel is a Ruby-based webserver with a C component (which requires compilation) that is
-suitable for development and deployment of Rails applications. If you have Ruby Gems installed,
-getting up and running with mongrel is as easy as: <tt>gem install mongrel</tt>.
-More info at: http://mongrel.rubyforge.org
+<li>How long does it take (in seconds) to find all the historic places within three (3) miles of user's location?</li>
+<li>How long does it take (in seconds) to find all the historic places within ten (10) miles of user's location?</li>
+</ol>
+</li>
+<li><strong>(BONUS +1 point)</strong> Write an XML-RPC web service to add user's location to database and generate XML and JSON feeds of user's last ten (10) locations.</li>
+</ol>
 
-Say other Ruby web servers like Thin and Ebb or regular web servers like Apache or LiteSpeed or
-Lighttpd or IIS. The Ruby web servers are run through Rack and the latter can either be setup to use
-FCGI or proxy to a pack of Mongrels/Thin/Ebb servers.
+<h3>Submitting the Assignment</h3>
+<ul>
+<li>Submit your compiled and compressed (in a ZIP or tarball) application application via <code>provide comp120 a3 &lt;FILE&gt;</code>.  Example: <code>provide comp120 a3 a3.zip</code></li>
 
-== Apache .htaccess example for FCGI/CGI
+<li>You are allowed a maximum of two (2) submissions.</li>
+<li>File must not be bigger than 10MB.</li>
+<li>Lateness is one (1) point per each two (2) days late.</li>
+</ul>
 
-# General Apache options
-AddHandler fastcgi-script .fcgi
-AddHandler cgi-script .cgi
-Options +FollowSymLinks +ExecCGI
+<h3>Notes</h3>
+<ul>
+<li>There are many resources on the web that provide details on how to calculate the relative distance between two geocodes.  Here is one: <a href="http://zcentric.com/2010/03/11/calculate-distance-in-mysql-with-latitude-and-longitude/" target="_blank">http://zcentric.com/2010/03/11/calculate-distance-in-mysql-with-latitude-and-longitude/</a></li>
+</ul>
 
-# If you don't want Rails to look in certain directories,
-# use the following rewrite rules so that Apache won't rewrite certain requests
-# 
-# Example:
-#   RewriteCond %{REQUEST_URI} ^/notrails.*
-#   RewriteRule .* - [L]
+<hr/>
 
-# Redirect all requests not available on the filesystem to Rails
-# By default the cgi dispatcher is used which is very slow
-# 
-# For better performance replace the dispatcher with the fastcgi one
-#
-# Example:
-#   RewriteRule ^(.*)$ dispatch.fcgi [QSA,L]
-RewriteEngine On
+<p><em><a href="mailto:mchow@cs.tufts.edu">mchow@cs.tufts.edu</a></em></p>
+<p><a href="http://validator.w3.org/check?uri=referer" target="_blank"><img src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Transitional" height="31" width="88" border="0"/></a></p>
 
-# If your Rails application is accessed via an Alias directive,
-# then you MUST also set the RewriteBase in this htaccess file.
-#
-# Example:
-#   Alias /myrailsapp /path/to/myrailsapp/public
-#   RewriteBase /myrailsapp
-
-RewriteRule ^$ index.html [QSA]
-RewriteRule ^([^.]+)$ $1.html [QSA]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ dispatch.cgi [QSA,L]
-
-# In case Rails experiences terminal errors
-# Instead of displaying this message you can supply a file here which will be rendered instead
-# 
-# Example:
-#   ErrorDocument 500 /500.html
-
-ErrorDocument 500 "<h2>Application error</h2>Rails application failed to start properly"
-
-
-== Debugging Rails
-
-Sometimes your application goes wrong.  Fortunately there are a lot of tools that
-will help you debug it and get it back on the rails.
-
-First area to check is the application log files.  Have "tail -f" commands running
-on the server.log and development.log. Rails will automatically display debugging
-and runtime information to these files. Debugging info will also be shown in the
-browser on requests from 127.0.0.1.
-
-You can also log your own messages directly into the log file from your code using
-the Ruby logger class from inside your controllers. Example:
-
-  class WeblogController < ActionController::Base
-    def destroy
-      @weblog = Weblog.find(params[:id])
-      @weblog.destroy
-      logger.info("#{Time.now} Destroyed Weblog ID ##{@weblog.id}!")
-    end
-  end
-
-The result will be a message in your log file along the lines of:
-
-  Mon Oct 08 14:22:29 +1000 2007 Destroyed Weblog ID #1
-
-More information on how to use the logger is at http://www.ruby-doc.org/core/
-
-Also, Ruby documentation can be found at http://www.ruby-lang.org/ including:
-
-* The Learning Ruby (Pickaxe) Book: http://www.ruby-doc.org/docs/ProgrammingRuby/
-* Learn to Program: http://pine.fm/LearnToProgram/  (a beginners guide)
-
-These two online (and free) books will bring you up to speed on the Ruby language
-and also on programming in general.
-
-
-== Debugger
-
-Debugger support is available through the debugger command when you start your Mongrel or
-Webrick server with --debugger. This means that you can break out of execution at any point
-in the code, investigate and change the model, AND then resume execution! 
-You need to install ruby-debug to run the server in debugging mode. With gems, use 'gem install ruby-debug'
-Example:
-
-  class WeblogController < ActionController::Base
-    def index
-      @posts = Post.find(:all)
-      debugger
-    end
-  end
-
-So the controller will accept the action, run the first line, then present you
-with a IRB prompt in the server window. Here you can do things like:
-
-  >> @posts.inspect
-  => "[#<Post:0x14a6be8 @attributes={\"title\"=>nil, \"body\"=>nil, \"id\"=>\"1\"}>,
-       #<Post:0x14a6620 @attributes={\"title\"=>\"Rails you know!\", \"body\"=>\"Only ten..\", \"id\"=>\"2\"}>]"
-  >> @posts.first.title = "hello from a debugger"
-  => "hello from a debugger"
-
-...and even better is that you can examine how your runtime objects actually work:
-
-  >> f = @posts.first
-  => #<Post:0x13630c4 @attributes={"title"=>nil, "body"=>nil, "id"=>"1"}>
-  >> f.
-  Display all 152 possibilities? (y or n)
-
-Finally, when you're ready to resume execution, you enter "cont"
-
-
-== Console
-
-You can interact with the domain model by starting the console through <tt>script/console</tt>.
-Here you'll have all parts of the application configured, just like it is when the
-application is running. You can inspect domain models, change values, and save to the
-database. Starting the script without arguments will launch it in the development environment.
-Passing an argument will specify a different environment, like <tt>script/console production</tt>.
-
-To reload your controllers and models after launching the console run <tt>reload!</tt>
-
-== dbconsole
-
-You can go to the command line of your database directly through <tt>script/dbconsole</tt>.
-You would be connected to the database with the credentials defined in database.yml.
-Starting the script without arguments will connect you to the development database. Passing an
-argument will connect you to a different database, like <tt>script/dbconsole production</tt>.
-Currently works for mysql, postgresql and sqlite.
-
-== Description of Contents
-
-app
-  Holds all the code that's specific to this particular application.
-
-app/controllers
-  Holds controllers that should be named like weblogs_controller.rb for
-  automated URL mapping. All controllers should descend from ApplicationController
-  which itself descends from ActionController::Base.
-
-app/models
-  Holds models that should be named like post.rb.
-  Most models will descend from ActiveRecord::Base.
-
-app/views
-  Holds the template files for the view that should be named like
-  weblogs/index.html.erb for the WeblogsController#index action. All views use eRuby
-  syntax.
-
-app/views/layouts
-  Holds the template files for layouts to be used with views. This models the common
-  header/footer method of wrapping views. In your views, define a layout using the
-  <tt>layout :default</tt> and create a file named default.html.erb. Inside default.html.erb,
-  call <% yield %> to render the view using this layout.
-
-app/helpers
-  Holds view helpers that should be named like weblogs_helper.rb. These are generated
-  for you automatically when using script/generate for controllers. Helpers can be used to
-  wrap functionality for your views into methods.
-
-config
-  Configuration files for the Rails environment, the routing map, the database, and other dependencies.
-
-db
-  Contains the database schema in schema.rb.  db/migrate contains all
-  the sequence of Migrations for your schema.
-
-doc
-  This directory is where your application documentation will be stored when generated
-  using <tt>rake doc:app</tt>
-
-lib
-  Application specific libraries. Basically, any kind of custom code that doesn't
-  belong under controllers, models, or helpers. This directory is in the load path.
-
-public
-  The directory available for the web server. Contains subdirectories for images, stylesheets,
-  and javascripts. Also contains the dispatchers and the default HTML files. This should be
-  set as the DOCUMENT_ROOT of your web server.
-
-script
-  Helper scripts for automation and generation.
-
-test
-  Unit and functional tests along with fixtures. When using the script/generate scripts, template
-  test files will be generated for you and placed in this directory.
-
-vendor
-  External libraries that the application depends on. Also includes the plugins subdirectory.
-  If the app has frozen rails, those gems also go here, under vendor/rails/.
-  This directory is in the load path.

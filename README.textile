@@ -13,7 +13,7 @@ Geolocation is currently the hottest tech trend and area of development.  In thi
 h3. Requirements
 
  Two models will be necessary: one for historic place and one for user's location.  For the latitude and longitude in each model, use decimal data type with precision = 10, scale = 6
-Download list of historic places in the northeast region provided by the National Register of Historic Places: "http://www.cs.tufts.edu/comp/120/assignments/ne_landmarks.zip":ne_landmarks.zip (CSV, comma-separated, file compressed to ZIP).  The list has 18,246 records.  Write a Ruby script to parse the CSV file and create a SQL file of insert statements for the historic places table in MySQL.  The CSV file has four (4) columns:
+Download list of historic places in the northeast region provided by the National Register of Historic Places: "ne_landmarks.zip":http://www.cs.tufts.edu/comp/120/assignments/ne_landmarks.zip (CSV, comma-separated, file compressed to ZIP).  The list has 18,246 records.  Write a Ruby script to parse the CSV file and create a SQL file of insert statements for the historic places table in MySQL.  The CSV file has four (4) columns:
 
 ... 
 

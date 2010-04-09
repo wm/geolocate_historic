@@ -18,11 +18,11 @@ class HistoricPlacesController < ApplicationController
     end
   end
 
-  def show
+  def info
     @historic_place = HistoricPlace.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :layout => false }
       format.xml  { render :xml => @historic_place }
     end
   end

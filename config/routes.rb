@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :historic_places
+  map.resources :historic_places, :member => [:index => :get, :info => :get]
 
   # The priority is based upon order of creation: first created -> highest priority.
 

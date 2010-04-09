@@ -25,7 +25,9 @@ function createMarker(point, index, title, url) {
   var marker = new GMarker(point, markerOptions);
 
   GEvent.addListener(marker, "click", function() {
-    marker.openInfoWindowHtml("<h3>"+letter+". "+title+"</h3>");
+	  var openFnCallback = function() {$('.map_icon_window_area').load(url);};
+	  var html = "<div class='map_icon_window_header'>"+title+"</div><div class='map_icon_window_area'><img src='/images/loading.gif'></img></div>"
+		map.openInfoWindowHtml(marker.getLatLng(),html,{onOpenFn: openFnCallback});
   });
   return marker;
 }
@@ -71,7 +73,7 @@ getPlacesByLocation = function(lat,lng){
       $(data).each(function(index,element) {
         // Construct the new row.
         hp = this['historic_place'];
-				var marker = addPoint(index,hp.lat,hp.lng,hp.title,'');
+				var marker = addPoint(index,hp.lat,hp.lng,hp.title,'/historic_places/info/'+hp.id);
         var letter = String.fromCharCode("A".charCodeAt(0) + index);
 	      var title = hp.title;
 	
@@ -79,6 +81,7 @@ getPlacesByLocation = function(lat,lng){
 
         $('table#historic_places tbody:first').append(row);
         $('#icon_'+letter).click(function(){
+	        map.panTo(marker.getLatLng());
 	        marker.openInfoWindowHtml("<h3>"+letter+". "+title+"</h3>");
         });
         
@@ -89,9 +92,11 @@ getPlacesByLocation = function(lat,lng){
 };
 
 sc = function(position) {  
+	$('#page').show();
 	getPlacesByLocation(position.coords.latitude,position.coords.longitude);
 }
 
 ec = function(error) {  
+	$('#page').hide();
 	show_dialog("Error","Unable to determine your location!");
 }

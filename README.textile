@@ -1,0 +1,20 @@
+h1.  Assignment 3 for COMP 120 @ Tufts 
+
+"link to actual assignment":http://www.cs.tufts.edu/comp/120/assignments/a3.php
+
+h2. Assignment 3: Geolocation and National Historic Places
+
+h3. Due: Thursday, April 15th at 11:30 PM
+
+h3. Overview
+
+Geolocation is currently the hottest tech trend and area of development.  In this assignment, you will build a Ruby on Rails web application with desktop and mobile interfaces that detects and stores your location, and returns the nearest historic places within three (3) miles (relative distance).  We will only use historic places in the northeast region provided by the National Register of Historic Places:http://www.nps.gov/nr/.  In addition, this application returns a list of your last ten (10) locations in XML or JSON format
+
+h3. Requirements
+
+ Two models will be necessary: one for historic place and one for user's location.  For the latitude and longitude in each model, use decimal data type with precision = 10, scale = 6
+Download list of historic places in the northeast region provided by the National Register of Historic Places: "http://www.cs.tufts.edu/comp/120/assignments/ne_landmarks.zip":ne_landmarks.zip (CSV, comma-separated, file compressed to ZIP).  The list has 18,246 records.  Write a Ruby script to parse the CSV file and create a SQL file of insert statements for the historic places table in MySQL.  The CSV file has four (4) columns:
+
+... 
+
+"Read more here":http://www.cs.tufts.edu/comp/120/assignments/a3.php

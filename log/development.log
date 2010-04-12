@@ -10998,3 +10998,170 @@ Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:03:53)
   [4;36;1mHistoricPlace Load (86.9ms)[0m   [0;1mSELECT id,title,lat,lng,((ACOS(SIN(42.4328548 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4328548 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0758026 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM `historic_places` GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc[0m
   [4;35;1mHistoricPlace Columns (3.8ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
 Completed in 119ms (View: 19, DB: 91) | 200 OK [http://localhost/historic_places?lat=42.4328548&lng=-71.0758026]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:11:15) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:11:18) [GET]
+  Parameters: {"lng"=>"-71.0758026", "lat"=>"42.4328548"}
+  [4;36;1mHistoricPlace Load (0.0ms)[0m   [0;1mMysql::Error: Undeclared variable: calc: SELECT id,title,lat,lng,((ACOS(SIN(42.4328548 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4328548 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0758026 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) INTO calc FROM historic_places GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Undeclared variable: calc: SELECT id,title,lat,lng,((ACOS(SIN(42.4328548 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4328548 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0758026 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) INTO calc FROM historic_places GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc):
+  app/controllers/historic_places_controller.rb:10:in `index'
+
+Rendered rescues/_trace (123.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:11:57) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:12:02) [GET]
+  Parameters: {"lng"=>"-71.0758026", "lat"=>"42.4328548"}
+  [4;35;1mHistoricPlace Load (0.0ms)[0m   [0mMysql::Error: Unknown system variable 'calc': set calc = 0;SELECT id,title,lat,lng,((ACOS(SIN(42.4328548 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4328548 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0758026 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) INTO calc FROM historic_places GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Unknown system variable 'calc': set calc = 0;SELECT id,title,lat,lng,((ACOS(SIN(42.4328548 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4328548 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0758026 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) INTO calc FROM historic_places GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc):
+  app/controllers/historic_places_controller.rb:10:in `index'
+
+Rendered rescues/_trace (40.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:13:16) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:13:21) [GET]
+  Parameters: {"lng"=>"-71.076025", "lat"=>"42.4330732"}
+  [4;36;1mHistoricPlace Load (0.0ms)[0m   [0;1mMysql::Error: Unknown system variable '$calc': set $calc = 0;SELECT id,title,lat,lng,((ACOS(SIN(42.4330732 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4330732 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.076025 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) INTO calc FROM historic_places GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Unknown system variable '$calc': set $calc = 0;SELECT id,title,lat,lng,((ACOS(SIN(42.4330732 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4330732 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.076025 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) INTO calc FROM historic_places GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc):
+  app/controllers/historic_places_controller.rb:10:in `index'
+
+Rendered rescues/_trace (36.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:14:42) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:14:46) [GET]
+  Parameters: {"lng"=>"-71.076025", "lat"=>"42.4330732"}
+  [4;35;1mHistoricPlace Load (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT id,title,lat,lng,((ACOS(SIN(42.4330732 * PI() / 180) * SIN(lat * PI() / 1' at line 1: set @calc = 0;SELECT id,title,lat,lng,((ACOS(SIN(42.4330732 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4330732 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.076025 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) INTO calc FROM historic_places GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT id,title,lat,lng,((ACOS(SIN(42.4330732 * PI() / 180) * SIN(lat * PI() / 1' at line 1: set @calc = 0;SELECT id,title,lat,lng,((ACOS(SIN(42.4330732 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4330732 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.076025 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) INTO calc FROM historic_places GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc):
+  app/controllers/historic_places_controller.rb:10:in `index'
+
+Rendered rescues/_trace (38.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:15:08) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 5ms (View: 3, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:15:09) [GET]
+  Parameters: {"lng"=>"-71.076025", "lat"=>"42.4330732"}
+  [4;36;1mHistoricPlace Load (0.0ms)[0m   [0;1mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT id,title,lat,lng,((ACOS(SIN(42.4330732 * PI() / 180) * SIN(lat * PI() / 1' at line 1: set @calc = 0;SELECT id,title,lat,lng,((ACOS(SIN(42.4330732 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4330732 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.076025 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) INTO @calc FROM historic_places GROUP BY id,title,lat,lng HAVING @calc <= 2 ORDER BY @calc[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT id,title,lat,lng,((ACOS(SIN(42.4330732 * PI() / 180) * SIN(lat * PI() / 1' at line 1: set @calc = 0;SELECT id,title,lat,lng,((ACOS(SIN(42.4330732 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4330732 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.076025 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) INTO @calc FROM historic_places GROUP BY id,title,lat,lng HAVING @calc <= 2 ORDER BY @calc):
+  app/controllers/historic_places_controller.rb:10:in `index'
+
+Rendered rescues/_trace (62.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:15:11) [GET]
+  Parameters: {"lng"=>"-71.0758026", "lat"=>"42.4328548"}
+  [4;35;1mHistoricPlace Load (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT id,title,lat,lng,((ACOS(SIN(42.4328548 * PI() / 180) * SIN(lat * PI() / 1' at line 1: set @calc = 0;SELECT id,title,lat,lng,((ACOS(SIN(42.4328548 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4328548 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0758026 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) INTO @calc FROM historic_places GROUP BY id,title,lat,lng HAVING @calc <= 2 ORDER BY @calc[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT id,title,lat,lng,((ACOS(SIN(42.4328548 * PI() / 180) * SIN(lat * PI() / 1' at line 1: set @calc = 0;SELECT id,title,lat,lng,((ACOS(SIN(42.4328548 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4328548 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0758026 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) INTO @calc FROM historic_places GROUP BY id,title,lat,lng HAVING @calc <= 2 ORDER BY @calc):
+  app/controllers/historic_places_controller.rb:10:in `index'
+
+Rendered rescues/_trace (53.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:15:33) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:15:34) [GET]
+  Parameters: {"lng"=>"-71.0758026", "lat"=>"42.4328548"}
+  [4;36;1mHistoricPlace Load (862.2ms)[0m   [0;1mSELECT id,title,lat,lng,((ACOS(SIN(42.4328548 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4328548 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0758026 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc[0m
+  [4;35;1mHistoricPlace Columns (85.9ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 968ms (View: 13, DB: 948) | 200 OK [http://localhost/historic_places?lat=42.4328548&lng=-71.0758026]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:15:36) [GET]
+  Parameters: {"lng"=>"-71.0758026", "lat"=>"42.4328548"}
+  [4;36;1mHistoricPlace Load (154.3ms)[0m   [0;1mSELECT id,title,lat,lng,((ACOS(SIN(42.4328548 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4328548 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0758026 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc[0m
+  [4;35;1mHistoricPlace Columns (3.7ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 182ms (View: 11, DB: 158) | 200 OK [http://localhost/historic_places?lat=42.4328548&lng=-71.0758026]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:22:41) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:22:45) [GET]
+  Parameters: {"lng"=>"-71.0758026", "lat"=>"42.4328548"}
+  [4;36;1mHistoricPlace Load (122.3ms)[0m   [0;1mSELECT id,title,lat,lng,((ACOS(SIN(42.4328548 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4328548 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0758026 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,lat,lng HAVING ((ACOS(SIN(42.4328548 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4328548 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0758026 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 2 ORDER BY calc[0m
+  [4;35;1mHistoricPlace Columns (23.8ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 239ms (View: 12, DB: 146) | 200 OK [http://localhost/historic_places?lat=42.4328548&lng=-71.0758026]

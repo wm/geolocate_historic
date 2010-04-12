@@ -10,6 +10,6 @@ class QueryLocation < ActiveRecord::Base
   private
   
   def increment_query_count
-    self.query_count = self.query_count + 1
+    self.query_count = self.query_count + 1 unless self.query_count.nil?
   end
 end

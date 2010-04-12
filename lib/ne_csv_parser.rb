@@ -1,3 +1,4 @@
+# Be sure to run this with ./script/runner so the the Rails environment is invoked.
 require 'csv'
 
 class NeCsvParser

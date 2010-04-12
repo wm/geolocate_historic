@@ -37,7 +37,7 @@ class HistoricPlacesController < ApplicationController
     calc = "((ACOS(SIN(#{lat} * PI() / 180) * SIN(lat * PI() / 180) + "
     calc = calc + "COS(#{lat} * PI() / 180) * COS(lat * PI() / 180) * "
     calc = calc + "COS((#{lng} - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515)" 
-    calc = "SELECT id,title,lat,lng,#{calc} as calc FROM `historic_places` "
+    calc = "SELECT id,title,lat,lng,#{calc} as calc FROM historic_places "
     calc = calc + "GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc"
   end
 end

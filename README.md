@@ -11,11 +11,11 @@ My Solution
 
 I wrote two models and a helper class. 
 
->HistoricPlace objects store all the CSV parsed places
->DistanceHelper class in lib/distance_helper.rb helps to generate SQL to search for placed near a give location.
->Google API Key is defined separately in production.rb and development.rb so that I can develop with a localhost dev license and use a production license too.
->I overwrite the HistoricPlace.calc method to display distances with 2 decimal places
->Store all locations queried from and update their query_count (and time stamp) if multiple queries from one location. Consider one location to be with in a certain radius not a particular point.
+1. HistoricPlace objects store all the CSV parsed places
+1. DistanceHelper class in lib/distance_helper.rb helps to generate SQL to search for placed near a give location.
+1. Google API Key is defined separately in production.rb and development.rb so that I can develop with a localhost dev license and use a production license too.
+1. I overwrite the HistoricPlace.calc method to display distances with 2 decimal places
+1. Store all locations queried from and update their query_count (and time stamp) if multiple queries from one location. Consider one location to be with in a certain radius not a particular point.
 
 To parse the data file run
 

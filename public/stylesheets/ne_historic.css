@@ -23,6 +23,8 @@ a:hover { color: #fff; background-color:#000; }
 #content {
 	float: left;
   width: 40%;
+  height: 500px;
+  overflow:auto;
 }
 
 #map_area {

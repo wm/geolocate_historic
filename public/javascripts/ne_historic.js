@@ -1,16 +1,23 @@
-map = null;
+var map = null;
+var FF_LINK = "<a href='http://getfirefox.com'>something better</a>";
+var DETERMIN_LOC = "We are determining you location<br/>one moment please";
+var UNSUPPORTED = "This browser is not supported, sorry! Why not try "+FF_LINK;
+var UNDETERMINED_LOC = "Unable to determine your location!";
+var SEARCH_SITES = "One moment while we search for places near you.";
+var HOME_ICON = "http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=home|996600";
+var HOME_ICON_SHADOW = "http://chart.apis.google.com/chart?chst=d_map_pin_shadow";
 
 initialize = function() {
 	if(navigator.geolocation) {
-		show_dialog("#map_dialog","Notice","We are determining you location<br/>one moment please");
+		show_dialog("#map_dialog","Notice",DETERMIN_LOC);
     navigator.geolocation.getCurrentPosition(sc,ec);
   }else{	
     hide_dialog("#map_dialog");
-		show_dialog("#map_dialog","Notice","This browser is not supported, sorry! Why not try <a href='http://getfirefox.com'>something better</a>");
+		show_dialog("#map_dialog","Notice",UNSUPPORTED);
   }
 }
 
-//Run on successful location lookup
+// Run on successful location lookup
 sc = function(position) {  
 	$('#page').show();
 	map = new GMap2(document.getElementById("map_canvas"));
@@ -20,7 +27,7 @@ sc = function(position) {
 }
 
 ec = function(error) {
-	show_dialog("Error","Unable to determine your location!");
+	show_dialog("Error",UNDETERMINED_LOC);
 }
 
 show_dialog = function(id,title,html){
@@ -43,8 +50,8 @@ addPoint = function(index,lat,lng,title,url){
 addHomePoint = function(lat,lng){
 	var point = new GLatLng(lat,lng);
 	var homeIcon = new GIcon();
-	homeIcon.image = "http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=home|996600";
-	homeIcon.shadow = "http://chart.apis.google.com/chart?chst=d_map_pin_shadow";
+	homeIcon.image = HOME_ICON;
+	homeIcon.shadow = HOME_ICON_SHADOW;
 	homeIcon.iconAnchor = new GPoint(6, 20);
 	homeIcon.infoWindowAnchor = new GPoint(5, 1);
 	// Set up our GMarkerOptions object literal
@@ -78,7 +85,7 @@ getPlacesByLocation = function(lat,lng){
   hide_dialog("#map_dialog");
 	map.setCenter(new GLatLng(lat,lng));
 	addHomePoint(lat,lng);
-	show_dialog("#map_dialog","Notice","One moment while we search for places near you.");
+	show_dialog("#map_dialog","Notice",SEARCH_SITES);
   $.ajax({
     url: 'historic_places',
     dataType: 'json',
@@ -95,7 +102,7 @@ getPlacesByLocation = function(lat,lng){
 				var marker = addPoint(index,hp.lat,hp.lng,hp.title,url);
         var letter = String.fromCharCode("A".charCodeAt(0) + index);
 	      var title = hp.title;
-        var row = "<tr id='hp_"+hp.id+"'><td>"+letter+". <a id='icon_"+letter+"' href='#'>"+title+"</a></td></tr>";
+        var row = "<tr id='hp_"+hp.id+"'><td>"+letter+". <a id='icon_"+letter+"' href='#'>"+title+"</a> "+hp.calc+"mi </td></tr>";
         
         //add new row to table and give it a callback function
         $('table#historic_places tbody:first').append(row);

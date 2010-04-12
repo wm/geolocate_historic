@@ -7,13 +7,11 @@
   <title>HistoricPlaces: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'jquery-themes/css/mint-choc/jquery-ui-1.8.custom' %>
   <%= stylesheet_link_tag 'ne_historic' %>
-  <%= javascript_include_tag 'jquery-themes/jquery-1.4.2.min' %>
-  <%= javascript_include_tag 'jquery-themes/jquery-ui-1.8.custom.min' %>
-  <%= javascript_include_tag 'ne_historic' %>
+  <%= javascript_include_tag 'jquery-themes/jquery-1.4.2.min','jquery-themes/jquery-ui-1.8.custom.min','ne_historic', :cache => 'combined' %>
 
   <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=<%= @gkey %>" type="text/javascript"></script>
 </head>
-<body onload="initialize()" onunload="GUnload()">
+<body onunload="GUnload()">
 
 <p style="color: green"><%= flash[:notice] %></p>
 

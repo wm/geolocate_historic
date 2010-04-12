@@ -1,6 +1,5 @@
 class HistoricPlacesController < ApplicationController
-  DISTANCE = 2 # in miles
-  
+    
   def index
     # GAPI_KEY set in <development|production>.rb to have one for dev mode on
     # localhost and one for production mode on heroku
@@ -8,22 +7,15 @@ class HistoricPlacesController < ApplicationController
     @historic_places = []
     
     if params[:lat] && params[:lng]
+      @historic_places = HistoricPlace.find_places_within(params[:lat],params[:lng],DISTANCE)
       
-      # Find those places nearby
-      distance_calculation = DistanceHelper.distance_calc(
-          params[:lat],
-          params[:lng],
-          DISTANCE,
-          HistoricPlace.table_name,
-          'id,title,lat,lng'
-      )
-      @historic_places = HistoricPlace.find_by_sql(distance_calculation)
+      # Store the location or update it.
+      ql = QueryLocation.find_near(params[:lat],params[:lng],RADIUS)
+      ql ||= QueryLocation.new
+      ql.lat = params[:lat]
+      ql.lng = params[:lng]
+      ql.save
       
-      # Save the location being queried 
-      ql = QueryLocation.new(:lat => params[:lat], :lng => params[:lng])
-      unless ql.save
-        logger.debug(ql.errors.to_xml)
-      end
     end
 
     respond_to do |format|

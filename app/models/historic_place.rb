@@ -7,4 +7,13 @@ class HistoricPlace < ActiveRecord::Base
     calc = read_attribute('calc')
     (calc.to_f * 10**2).round.to_f / 10**2 unless calc.nil?
   end
+  
+  # Returns the HistoricPlaces within distance of the lat,lng
+  #
+  def self.find_places_within(lat,lng,distance)
+    distance_calculation = DistanceHelper.distance_calc(
+         lat,lng,distance,table_name,'id,title,lat,lng')
+    HistoricPlace.find_by_sql(distance_calculation)
+  end
+  
 end

@@ -1,11 +1,15 @@
 class QueryLocation < ActiveRecord::Base
-  validate :uniqueness_witin_radius
+  before_save :increment_query_count
   
-  def uniqueness_witin_radius
-    radius = 0.5
+  def self.find_near(lat,lng,distance)
     distance_calculation = DistanceHelper.distance_calc(
-        lat,lng,radius,QueryLocation.table_name,'lat,lng')
-    qls = QueryLocation.find_by_sql(distance_calculation)      
-    errors.add('Location',"must be unique to a #{radius} mile radius.") unless qls.empty?
+         lat,lng,distance,table_name,'id,lat,lng,query_count')
+    QueryLocation.find_by_sql(distance_calculation)[0]
+  end
+  
+  private
+  
+  def increment_query_count
+    self.query_count = self.query_count + 1
   end
 end

@@ -8,4 +8,10 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
   config.time_zone = 'UTC'
+  
+  # The distance to search witnin
+  DISTANCE = 2 # miles
+
+  # The radius of a location
+  RADIUS = 0.5 # miles
 end

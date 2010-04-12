@@ -117,3 +117,7 @@ getPlacesByLocation = function(lat,lng){
     }
   });
 };
+
+$(document).ready(function (){
+	initialize();
+});

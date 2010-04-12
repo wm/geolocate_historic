@@ -10886,3 +10886,115 @@ Processing HistoricPlacesController#info (for 127.0.0.1 at 2010-04-11 22:50:15) 
   [4;35;1mHistoricPlace Load (2.3ms)[0m   [0mSELECT * FROM `historic_places` WHERE (`historic_places`.`id` = 6421) [0m
 Rendering historic_places/info
 Completed in 18ms (View: 2, DB: 7) | 200 OK [http://localhost/historic_places/info/6421]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:00:39) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:00:43) [GET]
+  Parameters: {"lng"=>"-71.0758026", "lat"=>"42.4328548"}
+  [4;36;1mHistoricPlace Load (101.9ms)[0m   [0;1mSELECT id,title,lat,lng,((ACOS(SIN(42.4328548 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4328548 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0758026 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM `historic_places` GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc[0m
+  [4;35;1mHistoricPlace Columns (48.4ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 294ms (View: 136, DB: 151) | 200 OK [http://localhost/historic_places?lat=42.4328548&lng=-71.0758026]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:00:52) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:00:53) [GET]
+  Parameters: {"lng"=>"-71.0758026", "lat"=>"42.4328548"}
+  [4;36;1mHistoricPlace Load (126.4ms)[0m   [0;1mSELECT id,title,lat,lng,((ACOS(SIN(42.4328548 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4328548 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0758026 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM `historic_places` GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc[0m
+  [4;35;1mHistoricPlace Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 152ms (View: 17, DB: 130) | 200 OK [http://localhost/historic_places?lat=42.4328548&lng=-71.0758026]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:00:55) [GET]
+  Parameters: {"lng"=>"-71.0751524", "lat"=>"42.4334159"}
+  [4;36;1mHistoricPlace Load (76.7ms)[0m   [0;1mSELECT id,title,lat,lng,((ACOS(SIN(42.4334159 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4334159 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0751524 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM `historic_places` GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc[0m
+  [4;35;1mHistoricPlace Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 96ms (View: 11, DB: 80) | 200 OK [http://localhost/historic_places?lat=42.4334159&lng=-71.0751524]
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:03:32) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 4ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:03:36) [GET]
+  Parameters: {"lng"=>"-71.0758026", "lat"=>"42.4328548"}
+  [4;36;1mHistoricPlace Load (126.1ms)[0m   [0;1mSELECT id,title,lat,lng,((ACOS(SIN(42.4328548 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4328548 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0758026 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM `historic_places` GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc[0m
+  [4;35;1mHistoricPlace Columns (139.0ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 288ms (View: 17, DB: 265) | 200 OK [http://localhost/historic_places?lat=42.4328548&lng=-71.0758026]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:03:39) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:03:40) [GET]
+  Parameters: {"lng"=>"-71.0758026", "lat"=>"42.4328548"}
+  [4;36;1mHistoricPlace Load (121.8ms)[0m   [0;1mSELECT id,title,lat,lng,((ACOS(SIN(42.4328548 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4328548 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0758026 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM `historic_places` GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc[0m
+  [4;35;1mHistoricPlace Columns (4.3ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 263ms (View: 130, DB: 126) | 200 OK [http://localhost/historic_places?lat=42.4328548&lng=-71.0758026]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:03:43) [GET]
+  Parameters: {"lng"=>"-71.0751524", "lat"=>"42.4334159"}
+  [4;36;1mHistoricPlace Load (148.6ms)[0m   [0;1mSELECT id,title,lat,lng,((ACOS(SIN(42.4334159 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4334159 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0751524 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM `historic_places` GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc[0m
+  [4;35;1mHistoricPlace Columns (4.4ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 180ms (View: 18, DB: 153) | 200 OK [http://localhost/historic_places?lat=42.4334159&lng=-71.0751524]
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:03:49) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:03:50) [GET]
+  Parameters: {"lng"=>"-71.0751524", "lat"=>"42.4334159"}
+  [4;36;1mHistoricPlace Load (67.4ms)[0m   [0;1mSELECT id,title,lat,lng,((ACOS(SIN(42.4334159 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4334159 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0751524 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM `historic_places` GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc[0m
+  [4;35;1mHistoricPlace Columns (6.2ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 89ms (View: 10, DB: 74) | 200 OK [http://localhost/historic_places?lat=42.4334159&lng=-71.0751524]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-11 23:03:53) [GET]
+  Parameters: {"lng"=>"-71.0758026", "lat"=>"42.4328548"}
+  [4;36;1mHistoricPlace Load (86.9ms)[0m   [0;1mSELECT id,title,lat,lng,((ACOS(SIN(42.4328548 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4328548 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0758026 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM `historic_places` GROUP BY id,title,lat,lng HAVING calc <= 2 ORDER BY calc[0m
+  [4;35;1mHistoricPlace Columns (3.8ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 119ms (View: 19, DB: 91) | 200 OK [http://localhost/historic_places?lat=42.4328548&lng=-71.0758026]

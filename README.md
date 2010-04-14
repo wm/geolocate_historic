@@ -1,13 +1,10 @@
 Assignment 3 for COMP 120 @ Tufts 
 ==
 
-Assignment 3: Geolocation and National Historic Places
+Geolocation and National Historic Places
 --
 
 "link to actual assignment":http://www.cs.tufts.edu/comp/120/assignments/a3.php
-
-My Solution
---
 
 I wrote two models and a helper class. 
 

@@ -3,9 +3,15 @@
 	<div id='map_area'>
 		<div id="map_canvas"></div>
 	</div>
-	<div id='content'>
-		<table id='historic_places'>
-		  <tbody></tbody>
-		</table>
-	</div>
+	  <div id='accordion'>
+		  <h3>Historic Places</h3>
+		  <div id='content'>
+		  </div>
+	  </div>
 </div>
+<script>
+setQLInfo = function(){
+  var info_html = 'We determined you to be querying from IP: <%= @ip %><br/> Previous 10 query locations <%= link_to "XML", {:controller => "query_locations", :action => "index", :format => :xml}, {:title => "Download query locations in XML"} %> <%= link_to "JSON", {:controller => "query_locations", :action => "index", :format => :json}, {:title => "Download query locations in JSON"} %>';
+  return info_html;
+}
+</script>

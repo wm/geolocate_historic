@@ -5,6 +5,7 @@ class HistoricPlacesController < ApplicationController
     # localhost and one for production mode on heroku
     @gkey = GAPI_KEY 
     @historic_places = []
+    @ip = request.remote_ip
     
     if params[:lat] && params[:lng]
       @historic_places = HistoricPlace.find_places_within(params[:lat],params[:lng],DISTANCE)

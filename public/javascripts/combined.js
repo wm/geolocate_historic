@@ -530,6 +530,8 @@ jQuery.ui||(function(a){a.ui={version:"1.8",plugin:{add:function(c,d,f){var e=a.
  */(function(a){a.effects.transfer=function(b){return this.queue(function(){var f=a(this),h=a(b.options.to),e=h.offset(),g={top:e.top,left:e.left,height:h.innerHeight(),width:h.innerWidth()},d=f.offset(),c=a('<div class="ui-effects-transfer"></div>').appendTo(document.body).addClass(b.options.className).css({top:d.top,left:d.left,height:f.innerHeight(),width:f.innerWidth(),position:"absolute"}).animate(g,b.duration,b.options.easing,function(){c.remove();(b.callback&&b.callback.apply(f[0],arguments));f.dequeue()})})}})(jQuery);;
 
 var map = null;
+var homeMarker = null;
+var calledOnce = false;
 var FF_LINK = "<a href='http://getfirefox.com'>something better</a>";
 var DETERMIN_LOC = "We are determining you location<br/>one moment please";
 var UNSUPPORTED = "This browser is not supported, sorry! Why not try "+FF_LINK;
@@ -555,6 +557,7 @@ sc = function(position) {
   map.setCenter(new GLatLng(position.coords.latitude,position.coords.longitude), 13);
 	map.setUIToDefault();
 	getPlacesByLocation(position.coords.latitude,position.coords.longitude);
+		$('#page').show();
 }
 
 ec = function(error) {
@@ -574,6 +577,7 @@ addPoint = function(index,lat,lng,title,url){
 	var point = new GLatLng(lat,lng);
 	var marker = new createMarker(point,index,title,url);
   map.addOverlay(marker);
+
   return marker;
 }
 
@@ -589,6 +593,13 @@ addHomePoint = function(lat,lng){
 	markerOptions = { icon:homeIcon };
 	var marker = new GMarker(point, markerOptions);	
 	map.addOverlay(marker);
+	
+	
+  GEvent.addListener(marker, "click", function() {
+	  var html = "<div id='ql'>You are here!<div id='ql-info>"+setQLInfo()+"</div>"
+		map.openInfoWindowHtml(marker.getLatLng(),html);
+  });
+
   return marker;
 }
 
@@ -612,10 +623,31 @@ function createMarker(point, index, title, url) {
   return marker;
 }
 
+setupAccordion = function(){
+	$("#accordion").hide();				
+	$(function() {
+			$("#accordion").accordion({
+				collapsible: true,
+				autoHeight: true,
+				fillSpace: true
+			});
+	});
+	$(function() {
+			$("#accordionResizer").resizable({
+				resize: function() {
+					$("#accordion").accordion("resize");
+				},
+				minHeight: 140
+			});
+		});
+  //minimize the accordion
+  $("#accordion").accordion( "activate" , false )      
+  $("#accordion").show();
+}
 getPlacesByLocation = function(lat,lng){
   hide_dialog("#map_dialog");
 	map.setCenter(new GLatLng(lat,lng));
-	addHomePoint(lat,lng);
+	homeMarker = addHomePoint(lat,lng);
 	show_dialog("#map_dialog","Notice",SEARCH_SITES);
   $.ajax({
     url: 'historic_places',
@@ -642,13 +674,54 @@ getPlacesByLocation = function(lat,lng){
 				  var html = "<div class='map_icon_window_header'>"+title+"</div><div class='map_icon_window_area'><img src='/images/loading.gif'></img></div>"
 					map.openInfoWindowHtml(marker.getLatLng(),html,{onOpenFn: openFnCallback});
 			  });
-        
       });
+        
+	    hide_dialog("#map_dialog");	
+			GEvent.trigger(homeMarker,'click');
+
+      setupAccordion();
       hide_dialog("#map_dialog");
     }
   });
 };
 
 $(document).ready(function (){
-	initialize();
+	
+	  // Get and keep the Map full screen (document window)
+  	if (window.attachEvent) {	// IE
+	  	window.attachEvent("onresize", function() {resizeAndCenterMap();} ); 
+	  } else { 					// others
+		  window.addEventListener("resize", function() {resizeAndCenterMap();} , false); 
+	  } 
+	  // get window height independent of browser
+		function getWHeight() {
+			var myHeight = 0;
+			if( typeof( window.innerHeight ) == 'number' ) {
+				myHeight = window.innerHeight;
+			} else if( document.documentElement && document.documentElement.clientHeight) {
+				myHeight = document.documentElement.clientHeight;
+			} else if( document.body && document.body.clientHeight ) {
+				myHeight = document.body.clientHeight;
+			}
+			return myHeight;
+		}
+	// set div size
+		function setDivSize() {
+			if (getWHeight()) { 
+				document.getElementById("map_canvas").style.height = (getWHeight()-2) +'px';
+			}
+		}
+	// resize map keeping same centre
+		function resizeAndCenterMap() {
+			var mapcenter = map.getCenter();
+			setDivSize();
+			map.checkResize();
+			map.setCenter(mapcenter);
+		}
+	
+	if (calledOnce == 0){
+	  initialize();
+	}
+	setDivSize();
+	
 });

@@ -182,10 +182,8 @@ $(document).ready(function (){
 		}
 	// resize map keeping same centre
 		function resizeAndCenterMap() {
-			var mapcenter = map.getCenter();
 			setDivSize();
 			map.checkResize();
-			map.setCenter(mapcenter);
 		}
 	
 	if (calledOnce == 0){

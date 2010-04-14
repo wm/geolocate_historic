@@ -11,7 +11,7 @@
 </div>
 <script>
 setQLInfo = function(){
-  var info_html = 'We determined you to be querying from IP: <%= @ip %><br/> Previous 10 query locations <%= link_to "XML", {:controller => "query_locations", :action => "index", :format => :xml}, {:title => "Download query locations in XML"} %> <%= link_to "JSON", {:controller => "query_locations", :action => "index", :format => :json}, {:title => "Download query locations in JSON"} %>';
+  var info_html = 'We determined you to be querying from <br/>&nbsp;&nbsp;&nbsp;&nbsp;IP: <%= @ql.ip %> for the <%= @ql.query_count.ordinalize %> time.<br/><br/>Previous 10 query locations <%= link_to "XML", {:controller => "query_locations", :action => "index", :format => :xml}, {:title => "Download query locations in XML"} %> <%= link_to "JSON", {:controller => "query_locations", :action => "index", :format => :json}, {:title => "Download query locations in JSON"} %>';
   return info_html;
 }
 </script>

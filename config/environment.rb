@@ -12,6 +12,4 @@ Rails::Initializer.run do |config|
   # The distance to search witnin
   DISTANCE = 2 # miles
 
-  # The radius of a location
-  RADIUS = 0.5 # miles
 end

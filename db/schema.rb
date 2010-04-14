@@ -21,11 +21,10 @@ ActiveRecord::Schema.define(:version => 20100412053002) do
   end
 
   create_table "query_locations", :force => true do |t|
-    t.decimal  "lat",         :precision => 15, :scale => 10
-    t.decimal  "lng",         :precision => 15, :scale => 10
+    t.string   "ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "query_count",                                 :default => 1
+    t.integer  "query_count", :default => 1
   end
 
   create_table "visitors", :force => true do |t|

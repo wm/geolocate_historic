@@ -5,20 +5,18 @@ class HistoricPlacesController < ApplicationController
     # localhost and one for production mode on heroku
     @gkey = GAPI_KEY 
     @historic_places = []
-    @ip = request.remote_ip
+    ip = request.remote_ip
     
     if params[:lat] && params[:lng]
       @historic_places = HistoricPlace.find_places_within(params[:lat],params[:lng],DISTANCE)
-      
+    else
       # Store the location or update it.
-      ql = QueryLocation.find_near(params[:lat],params[:lng],RADIUS)
-      ql ||= QueryLocation.new
-      ql.lat = params[:lat]
-      ql.lng = params[:lng]
-      ql.save
-      
+      @ql = QueryLocation.find_by_ip(ip)
+      @ql ||= QueryLocation.new
+      @ql.ip = ip
+      @ql.save
     end
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @historic_places }

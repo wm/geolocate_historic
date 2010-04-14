@@ -182,8 +182,10 @@ $(document).ready(function (){
 		}
 	// resize map keeping same centre
 		function resizeAndCenterMap() {
-			setDivSize();
-			map.checkResize();
+			if (map !== null){
+			  setDivSize();
+			  map.checkResize();
+		  }
 		}
 	
 	if (calledOnce == 0){

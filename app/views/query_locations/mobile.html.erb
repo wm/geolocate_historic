@@ -1,0 +1,11 @@
+<div id="animations">
+    <div class="toolbar">
+        <h1>Places Near You</h1>
+        <a class="back" href="#">Home</a>
+    </div>
+    <ul class="rounded">
+      <% @query_locations.each do |location| %>
+        <li><%= location.ip %></li>
+      <% end %>
+    </ul>
+</div>

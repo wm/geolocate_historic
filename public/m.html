@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Historic New England - mobile</title>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript"> google.load("jquery", "1.3.2"); </script>
+  <script src="/jqt/jqtouch/jqtouch.min.js" type="application/x-javascript" charset="utf-8"></script>
+  <script src="/jqt/extensions/jqt.location.js" type="application/x-javascript" charset="utf-8"></script>
+  <style type="text/css" media="screen">@import "/jqt/jqtouch/jqtouch.min.css";</style>
+  <style type="text/css" media="screen">@import "/jqt/themes/jqt/theme.min.css";</style>
+
+  <script type="text/javascript" charset="utf-8">
+  	  var jQT = new $.jQTouch({
+	        icon: 'jqtouch.png',
+	        statusBar: 'black-translucent',
+	        preloadImages: [
+	            '/jqt/themes/jqt/img/chevron_white.png',
+	            '/jqt/themes/jqt/img/bg_row_select.gif',
+	            '/jqt/themes/jqt/img/back_button_clicked.png',
+	            '/jqt/themes/jqt/img/button_clicked.png'
+	            ]
+	    });
+			$(function(){
+				  $('#hp_menu').hide();
+          function setDisplay(text) {
+              $('.info').empty().append(text)
+          }
+          function updateGetParams(lat,lng) {
+             var gParams = "?lat="+lat+"&lng="+lng;
+             $('#hp_menu li a')[0].href += gParams;
+          }
+          
+          // We pass "updateLocation" a callback function,
+          // to run once we have the coordinates.
+          // We also set it to a variable, so we can know
+          // right away if it's working or not
+          var lookup = jQT.updateLocation(function(coords){
+              if (coords) {
+                  setDisplay('Latitude: ' + coords.latitude + '<br />Longitude: ' + coords.longitude);
+                  $('#hp_menu').show();
+                  updateGetParams(coords.latitude,coords.longitude);
+              } else {
+                  setDisplay('Device not capable of geo-location.');
+              }
+          });
+
+          if (lookup) {
+              setDisplay('Looking up location&hellip;');
+          }
+      });
+  </script>
+   <style type="text/css" media="screen">
+        body.fullscreen #home .info {
+            display: none;
+        }
+        #about {
+            padding: 100px 10px 40px;
+            text-shadow: rgba(255, 255, 255, 0.3) 0px -1px 0;
+            font-size: 13px;
+            text-align: center;
+            background: #161618;
+        }
+        #about p {
+            margin-bottom: 8px;
+        }
+        #about a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+	<div id="about" class="selectable">
+          <p><img src="/images/gravatar.png" /></p>
+          <p><strong>Historic New England</strong><br />Version 1.0 beta<br />
+              <a href="http://www.willandorla.com">By Will Mernagh</a></p>
+          <p><em>Created for COMP 120 @ tufts.<br /> Built with jQTouch - just HTML, CSS, and jQuery.</em></p>
+          <p>
+              <a href="http://twitter.com/wmernagh" target="_blank">Follow me on Twitter</a>
+          </p>
+          <p><br /><br /><a href="#" class="grayButton goback">Close</a></p>
+  </div>
+	
+  <div id="home" class="current">
+      <div class="toolbar">
+          <h1>Historic New England</h1>
+          <a class="button slideup" id="infoButton" href="#about">About</a>
+      </div>
+      <ul id='hp_menu' class="rounded">
+          <li class="arrow"><a href="/historic_places/mobile/">Historic Places</a></li>
+          <li class="arrow"><a href="/query_locations/mobile/">Last 10 Locations Queried</a></li>
+      </ul>
+      <h2>External Links</h2>
+      <ul class="rounded">
+          <li class="forward"><a href="http://www.willandorla.com/" target="_blank">WillAndOrla</a></li>
+          <li class="forward"><a href="http://www.twitter.com/wmernagh" target="_blank">Twitter</a></li>
+          <li class="forward"><a href="http://github.com/wmernagh/geolocate_historic" target="_blank">GitHub</a></li>
+          <li class="forward"><a href="http://cs.tufts.edu/comp/120" target="_blank">COMP 120</a></li>
+      </ul>
+ 
+      <div class="info">
+          <p>Assignment 3 for COMP 120 @ Tufts University.</p>
+      </div>
+  </div>
+</body>
+</html>

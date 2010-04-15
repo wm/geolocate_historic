@@ -1,0 +1,23 @@
+  <div id="animations">
+      <div class="toolbar">
+          <h1>Places Near You</h1>
+          <a class="back" href="#">Home</a>
+      </div>
+      <ul class="rounded">
+	      <% @historic_places.each do |place| %>
+          <li><a class="slideup" href="#place_<%= place.id %>"><%= place.title %></a><small class="counter"><%= place.calc %>mi</small></li>
+        <% end %>
+      </ul>
+  </div>
+  <% @historic_places.each do |place| %>
+    <div id="place_<%= place.id %>">
+	     	<div class="toolbar">
+           <h1><%= place.title %></h1>
+           <a href="#" class="back">Back</a>
+       </div>
+				<img src="http://maps.google.com/maps/api/staticmap?center=<%= @lat %>,<%= @lng %>&zoom=12&size=412x412&markers=color:blue|label:H|<%= @lat %>,<%= @lng %>&markers=color:red|label:P|<%= place.lat %>,<%= place.lng %>&sensor=false"><br/>
+        <%= place.description %>
+        
+      <a style="margin:0 10px;color:rgba(0,0,0,.9)" href="#" class="whiteButton goback">Go back</a>
+    </div>
+  <% end %>

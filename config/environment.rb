@@ -10,6 +10,6 @@ Rails::Initializer.run do |config|
   config.time_zone = 'UTC'
   
   # The distance to search witnin
-  DISTANCE = 2 # miles
+  DISTANCE = 3 # miles
 
 end

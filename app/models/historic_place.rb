@@ -12,7 +12,7 @@ class HistoricPlace < ActiveRecord::Base
   #
   def self.find_places_within(lat,lng,distance)
     distance_calculation = DistanceHelper.distance_calc(
-         lat,lng,distance,table_name,'id,title,lat,lng')
+         lat,lng,distance,table_name,'id,title,description,lat,lng')
     HistoricPlace.find_by_sql(distance_calculation)
   end
   

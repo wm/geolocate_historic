@@ -22343,3 +22343,623 @@ Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 01:38:42)
   [4;36;1mHistoricPlace Load (111.8ms)[0m   [0;1mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4337558 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4337558 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0752771 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4337558 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4337558 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0752771 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3 ORDER BY calc[0m
   [4;35;1mHistoricPlace Columns (3.7ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
 Completed in 134ms (View: 11, DB: 116) | 200 OK [http://localhost/historic_places?lat=42.4337558&lng=-71.0752771]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 01:41:12) [GET]
+  Parameters: {"lng"=>"-71.0752771", "lat"=>"42.4337558"}
+  [4;36;1mHistoricPlace Load (124.5ms)[0m   [0;1mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4337558 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4337558 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0752771 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4337558 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4337558 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0752771 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3 ORDER BY calc[0m
+  [4;35;1mHistoricPlace Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 160ms (View: 22, DB: 131) | 200 OK [http://localhost/historic_places?lat=42.4337558&lng=-71.0752771]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 01:41:39) [GET]
+  [4;36;1mQueryLocation Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `query_locations`[0m
+  [4;35;1mQueryLocation Load (0.8ms)[0m   [0mSELECT * FROM `query_locations` WHERE (`query_locations`.`ip` = '127.0.0.1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQueryLocation Update (0.2ms)[0m   [0mUPDATE `query_locations` SET `updated_at` = '2010-04-15 05:41:39', `query_count` = 89 WHERE `id` = 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 17ms (View: 3, DB: 6) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 01:41:40) [GET]
+  Parameters: {"lng"=>"-71.0752771", "lat"=>"42.4337558"}
+  [4;35;1mHistoricPlace Load (113.3ms)[0m   [0mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4337558 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4337558 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0752771 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4337558 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4337558 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0752771 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3 ORDER BY calc[0m
+  [4;36;1mHistoricPlace Columns (3.8ms)[0m   [0;1mSHOW FIELDS FROM `historic_places`[0m
+Completed in 136ms (View: 11, DB: 117) | 200 OK [http://localhost/historic_places?lat=42.4337558&lng=-71.0752771]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 01:41:43) [GET]
+  Parameters: {"lng"=>"-71.0752771", "lat"=>"42.4337558"}
+  [4;35;1mHistoricPlace Load (120.2ms)[0m   [0mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4337558 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4337558 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0752771 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4337558 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4337558 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0752771 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3 ORDER BY calc[0m
+  [4;36;1mHistoricPlace Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `historic_places`[0m
+Completed in 159ms (View: 11, DB: 124) | 200 OK [http://localhost/historic_places?lat=42.4337558&lng=-71.0752771]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 01:42:06) [GET]
+  [4;35;1mQueryLocation Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `query_locations`[0m
+  [4;36;1mQueryLocation Load (0.7ms)[0m   [0;1mSELECT * FROM `query_locations` WHERE (`query_locations`.`ip` = '127.0.0.1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQueryLocation Update (0.2ms)[0m   [0;1mUPDATE `query_locations` SET `updated_at` = '2010-04-15 05:42:06', `query_count` = 90 WHERE `id` = 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 15ms (View: 3, DB: 5) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 01:42:07) [GET]
+  Parameters: {"lng"=>"-71.0752771", "lat"=>"42.4337558"}
+  [4;36;1mHistoricPlace Load (118.1ms)[0m   [0;1mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4337558 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4337558 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0752771 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4337558 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4337558 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0752771 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3 ORDER BY calc[0m
+  [4;35;1mHistoricPlace Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 216ms (View: 11, DB: 121) | 200 OK [http://localhost/historic_places?lat=42.4337558&lng=-71.0752771]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 01:42:09) [GET]
+  Parameters: {"lng"=>"-71.0752771", "lat"=>"42.4337558"}
+  [4;36;1mHistoricPlace Load (147.0ms)[0m   [0;1mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4337558 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4337558 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0752771 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4337558 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4337558 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0752771 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3 ORDER BY calc[0m
+  [4;35;1mHistoricPlace Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 187ms (View: 11, DB: 150) | 200 OK [http://localhost/historic_places?lat=42.4337558&lng=-71.0752771]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#info (for 127.0.0.1 at 2010-04-15 01:42:35) [GET]
+  Parameters: {"id"=>"5128"}
+  [4;36;1mHistoricPlace Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `historic_places`[0m
+  [4;35;1mHistoricPlace Load (1.7ms)[0m   [0mSELECT * FROM `historic_places` WHERE (`historic_places`.`id` = 5128) [0m
+Rendering historic_places/info
+Completed in 26ms (View: 13, DB: 7) | 200 OK [http://localhost/historic_places/info/5128]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#info (for 127.0.0.1 at 2010-04-15 01:42:41) [GET]
+  Parameters: {"id"=>"3927"}
+  [4;36;1mHistoricPlace Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `historic_places`[0m
+  [4;35;1mHistoricPlace Load (1.2ms)[0m   [0mSELECT * FROM `historic_places` WHERE (`historic_places`.`id` = 3927) [0m
+Rendering historic_places/info
+Completed in 13ms (View: 2, DB: 5) | 200 OK [http://localhost/historic_places/info/3927]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#mobile (for 127.0.0.1 at 2010-04-15 01:47:52) [GET]
+  [4;36;1mQueryLocation Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `query_locations`[0m
+  [4;35;1mQueryLocation Load (2.3ms)[0m   [0mSELECT * FROM `query_locations` WHERE (`query_locations`.`ip` = '127.0.0.1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQueryLocation Update (70.2ms)[0m   [0mUPDATE `query_locations` SET `updated_at` = '2010-04-15 05:47:52', `query_count` = 91 WHERE `id` = 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+Rendering historic_places/mobile
+Completed in 89ms (View: 1, DB: 77) | 200 OK [http://localhost/historic_places/mobile]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-15 01:48:07) [GET]
+
+ActionController::RoutingError (No route matches "/jqt/themes/jqt/img/bg_row_select.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-15 01:48:07) [GET]
+
+ActionController::RoutingError (No route matches "/jqt/themes/jqt/img/chevron_white.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryLocationsController#mobile (for 127.0.0.1 at 2010-04-15 01:48:10) [GET]
+  [4;35;1mQueryLocation Load (0.3ms)[0m   [0mSELECT * FROM `query_locations` ORDER BY updated_at DESC LIMIT 10[0m
+Rendering query_locations/mobile
+  [4;36;1mQueryLocation Columns (3.8ms)[0m   [0;1mSHOW FIELDS FROM `query_locations`[0m
+
+ActionView::TemplateError (undefined method `lat' for #<QueryLocation:0x104202600>) on line #8 of app/views/query_locations/mobile.html.erb:
+5:     </div>
+6:     <ul class="rounded">
+7:       <% @query_locations.each do |location| %>
+8:         <li><%= location.ip %><br/><%= location.lat %>/<%= location.lng %></li>
+9:       <% end %>
+10:     </ul>
+11: </div>
+
+    app/views/query_locations/mobile.html.erb:8
+    app/views/query_locations/mobile.html.erb:7:in `each'
+    app/views/query_locations/mobile.html.erb:7
+    app/controllers/query_locations_controller.rb:14:in `mobile'
+    app/controllers/query_locations_controller.rb:13:in `mobile'
+
+Rendered rescues/_trace (45.7ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#mobile (for 127.0.0.1 at 2010-04-15 01:48:17) [GET]
+  Parameters: {"lng"=>"-71.0752779", "lat"=>"42.4337728"}
+  [4;35;1mHistoricPlace Load (73.3ms)[0m   [0mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4337728 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4337728 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0752779 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4337728 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4337728 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.0752779 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3 ORDER BY calc[0m
+Rendering historic_places/mobile
+  [4;36;1mHistoricPlace Columns (36.2ms)[0m   [0;1mSHOW FIELDS FROM `historic_places`[0m
+Completed in 120ms (View: 3, DB: 110) | 200 OK [http://localhost/historic_places/mobile/?lat=42.4337728&lng=-71.0752779]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryLocationsController#mobile (for 127.0.0.1 at 2010-04-15 01:48:21) [GET]
+  [4;35;1mQueryLocation Load (0.4ms)[0m   [0mSELECT * FROM `query_locations` ORDER BY updated_at DESC LIMIT 10[0m
+Rendering query_locations/mobile
+  [4;36;1mQueryLocation Columns (44.6ms)[0m   [0;1mSHOW FIELDS FROM `query_locations`[0m
+
+ActionView::TemplateError (undefined method `lat' for #<QueryLocation:0x104243718>) on line #8 of app/views/query_locations/mobile.html.erb:
+5:     </div>
+6:     <ul class="rounded">
+7:       <% @query_locations.each do |location| %>
+8:         <li><%= location.ip %><br/><%= location.lat %>/<%= location.lng %></li>
+9:       <% end %>
+10:     </ul>
+11: </div>
+
+    app/views/query_locations/mobile.html.erb:8
+    app/views/query_locations/mobile.html.erb:7:in `each'
+    app/views/query_locations/mobile.html.erb:7
+    app/controllers/query_locations_controller.rb:14:in `mobile'
+    app/controllers/query_locations_controller.rb:13:in `mobile'
+
+Rendered rescues/_trace (121.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-15 01:48:26) [GET]
+
+ActionController::RoutingError (No route matches "/jqt/themes/jqt/img/bg_row_select.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-15 01:48:27) [GET]
+
+ActionController::RoutingError (No route matches "/jqt/themes/jqt/img/chevron_white.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryLocationsController#mobile (for 127.0.0.1 at 2010-04-15 01:48:30) [GET]
+  [4;35;1mQueryLocation Load (0.4ms)[0m   [0mSELECT * FROM `query_locations` ORDER BY updated_at DESC LIMIT 10[0m
+Rendering query_locations/mobile
+  [4;36;1mQueryLocation Columns (4.6ms)[0m   [0;1mSHOW FIELDS FROM `query_locations`[0m
+
+ActionView::TemplateError (undefined method `lat' for #<QueryLocation:0x104363968>) on line #8 of app/views/query_locations/mobile.html.erb:
+5:     </div>
+6:     <ul class="rounded">
+7:       <% @query_locations.each do |location| %>
+8:         <li><%= location.ip %><br/><%= location.lat %>/<%= location.lng %></li>
+9:       <% end %>
+10:     </ul>
+11: </div>
+
+    app/views/query_locations/mobile.html.erb:8
+    app/views/query_locations/mobile.html.erb:7:in `each'
+    app/views/query_locations/mobile.html.erb:7
+    app/controllers/query_locations_controller.rb:14:in `mobile'
+    app/controllers/query_locations_controller.rb:13:in `mobile'
+
+Rendered rescues/_trace (46.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 12:15:34) [GET]
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.ip) on line #14 of app/views/historic_places/index.html.erb:
+11: </div>
+12: <script>
+13: setQLInfo = function(){
+14:   var info_html = 'We determined you to be querying from <br/>&nbsp;&nbsp;&nbsp;&nbsp;IP: <%= @ql.ip %> for the <%= @ql.query_count.ordinalize %> time.<br/><br/>Previous 10 query locations <%= link_to "XML", {:controller => "query_locations", :action => "index", :format => :xml}, {:title => "Download query locations in XML"} %> <%= link_to "JSON", {:controller => "query_locations", :action => "index", :format => :json}, {:title => "Download query locations in JSON"} %>';
+15:   return info_html;
+16: }
+17: </script>
+
+    app/views/historic_places/index.html.erb:14
+    app/controllers/historic_places_controller.rb:23:in `desktop'
+    app/controllers/historic_places_controller.rb:8:in `index'
+
+Rendered rescues/_trace (43.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 12:15:54) [GET]
+  [4;35;1mQueryLocation Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `query_locations`[0m
+  [4;36;1mQueryLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `query_locations` WHERE (`query_locations`.`ip` = '127.0.0.1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQueryLocation Update (0.2ms)[0m   [0;1mUPDATE `query_locations` SET `updated_at` = '2010-04-15 16:15:54', `query_count` = 92 WHERE `id` = 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 15ms (View: 3, DB: 5) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 12:15:58) [GET]
+  Parameters: {"lng"=>"-71.1159683", "lat"=>"42.4083349"}
+  [4;36;1mHistoricPlace Load (243.9ms)[0m   [0;1mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3 ORDER BY calc[0m
+  [4;35;1mHistoricPlace Columns (4.7ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 293ms (View: 23, DB: 249) | 200 OK [http://localhost/historic_places?lat=42.4083349&lng=-71.1159683]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryLocationsController#index to xml (for 127.0.0.1 at 2010-04-15 12:16:02) [GET]
+  [4;36;1mQueryLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `query_locations` ORDER BY updated_at DESC LIMIT 10[0m
+  [4;35;1mQueryLocation Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `query_locations`[0m
+Completed in 290ms (View: 283, DB: 3) | 200 OK [http://localhost/query_locations.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (90.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateHistoricPlaces (20100401013217)
+Migrating to CreateQueryLocations (20100412033149)
+Migrating to AddCountToQueryLocations (20100412053002)
+Migrating to AddLatLngToQueryLocations (20100415053003)
+  [4;36;1mSQL (212.3ms)[0m   [0;1mALTER TABLE `query_locations` ADD `lat` decimal(15,10)[0m
+  [4;35;1mSQL (168.3ms)[0m   [0mALTER TABLE `query_locations` ADD `lng` decimal(15,10)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100415053003')[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mSHOW FIELDS FROM `historic_places`[0m
+  [4;35;1mSQL (3.5ms)[0m   [0mdescribe `historic_places`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSHOW KEYS FROM `historic_places`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `query_locations`[0m
+  [4;36;1mSQL (5.8ms)[0m   [0;1mdescribe `query_locations`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `query_locations`[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mSHOW FIELDS FROM `visitors`[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mdescribe `visitors`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW KEYS FROM `visitors`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 12:16:22) [GET]
+  [4;36;1mQueryLocation Columns (3.8ms)[0m   [0;1mSHOW FIELDS FROM `query_locations`[0m
+  [4;35;1mQueryLocation Load (0.3ms)[0m   [0mSELECT * FROM `query_locations` WHERE (`query_locations`.`ip` = '127.0.0.1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQueryLocation Update (0.2ms)[0m   [0mUPDATE `query_locations` SET `updated_at` = '2010-04-15 16:16:22', `query_count` = 93 WHERE `id` = 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 16ms (View: 2, DB: 5) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 12:16:23) [GET]
+  Parameters: {"lng"=>"-71.1159683", "lat"=>"42.4083349"}
+  [4;35;1mHistoricPlace Load (119.8ms)[0m   [0mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3 ORDER BY calc[0m
+  [4;36;1mHistoricPlace Columns (10.4ms)[0m   [0;1mSHOW FIELDS FROM `historic_places`[0m
+Completed in 153ms (View: 10, DB: 130) | 200 OK [http://localhost/historic_places?lat=42.4083349&lng=-71.1159683]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 12:16:26) [GET]
+  Parameters: {"lng"=>"-71.1159683", "lat"=>"42.4083349"}
+  [4;35;1mHistoricPlace Load (198.7ms)[0m   [0mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3 ORDER BY calc[0m
+  [4;36;1mHistoricPlace Columns (5.4ms)[0m   [0;1mSHOW FIELDS FROM `historic_places`[0m
+Completed in 235ms (View: 10, DB: 204) | 200 OK [http://localhost/historic_places?lat=42.4083349&lng=-71.1159683]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryLocationsController#index to xml (for 127.0.0.1 at 2010-04-15 12:16:30) [GET]
+  [4;35;1mQueryLocation Load (0.6ms)[0m   [0mSELECT * FROM `query_locations` ORDER BY updated_at DESC LIMIT 10[0m
+  [4;36;1mQueryLocation Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `query_locations`[0m
+Completed in 12ms (View: 3, DB: 4) | 200 OK [http://localhost/query_locations.xml]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 12:16:37) [GET]
+  Parameters: {"lng"=>"-71.1159683", "lat"=>"42.4083349"}
+  [4;35;1mHistoricPlace Load (88.0ms)[0m   [0mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3 ORDER BY calc[0m
+  [4;36;1mHistoricPlace Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `historic_places`[0m
+Completed in 196ms (View: 9, DB: 92) | 200 OK [http://localhost/historic_places?lat=42.4083349&lng=-71.1159683]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mQueryLocation Load (0.4ms)[0m   [0;1mSELECT * FROM `query_locations` [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQueryLocation Columns (23.7ms)[0m   [0;1mSHOW FIELDS FROM `query_locations`[0m
+  [4;35;1mQueryLocation Destroy (0.3ms)[0m   [0mDELETE FROM `query_locations` WHERE `id` = 1[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 12:21:20) [GET]
+  [4;35;1mQueryLocation Columns (3.8ms)[0m   [0mSHOW FIELDS FROM `query_locations`[0m
+  [4;36;1mQueryLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `query_locations` WHERE (`query_locations`.`ip` = '127.0.0.1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQueryLocation Create (0.3ms)[0m   [0;1mINSERT INTO `query_locations` (`created_at`, `updated_at`, `query_count`, `lng`, `ip`, `lat`) VALUES('2010-04-15 16:21:20', '2010-04-15 16:21:20', 2, NULL, '127.0.0.1', NULL)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 21ms (View: 4, DB: 5) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 12:21:24) [GET]
+  Parameters: {"lng"=>"-71.1159988", "lat"=>"42.4083085"}
+  [4;36;1mHistoricPlace Load (249.4ms)[0m   [0;1mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4083085 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083085 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159988 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4083085 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083085 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159988 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3 ORDER BY calc[0m
+  [4;35;1mHistoricPlace Columns (3.8ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 292ms (View: 15, DB: 254) | 200 OK [http://localhost/historic_places?lat=42.4083085&lng=-71.1159988]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryLocationsController#index to xml (for 127.0.0.1 at 2010-04-15 12:21:28) [GET]
+  [4;36;1mQueryLocation Load (0.5ms)[0m   [0;1mSELECT * FROM `query_locations` ORDER BY updated_at DESC LIMIT 10[0m
+  [4;35;1mQueryLocation Columns (3.6ms)[0m   [0mSHOW FIELDS FROM `query_locations`[0m
+Completed in 11ms (View: 3, DB: 4) | 200 OK [http://localhost/query_locations.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryLocationsController#index to xml (for 127.0.0.1 at 2010-04-15 12:22:44) [GET]
+  [4;36;1mQueryLocation Load (1.0ms)[0m   [0;1mSELECT * FROM `query_locations` ORDER BY updated_at DESC LIMIT 10[0m
+  [4;35;1mQueryLocation Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `query_locations`[0m
+Completed in 13ms (View: 3, DB: 5) | 200 OK [http://localhost/query_locations.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 12:23:01) [GET]
+  Parameters: {"lng"=>"-71.1159683", "lat"=>"42.4083349"}
+  [4;36;1mHistoricPlace Load (137.4ms)[0m   [0;1mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3 ORDER BY calc[0m
+  [4;35;1mHistoricPlace Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 243ms (View: 90, DB: 141) | 200 OK [http://localhost/historic_places?lat=42.4083349&lng=-71.1159683]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryLocationsController#index to xml (for 127.0.0.1 at 2010-04-15 12:23:04) [GET]
+  [4;36;1mQueryLocation Load (0.6ms)[0m   [0;1mSELECT * FROM `query_locations` ORDER BY updated_at DESC LIMIT 10[0m
+  [4;35;1mQueryLocation Columns (3.6ms)[0m   [0mSHOW FIELDS FROM `query_locations`[0m
+Completed in 12ms (View: 3, DB: 4) | 200 OK [http://localhost/query_locations.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 12:23:10) [GET]
+  [4;36;1mQueryLocation Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `query_locations`[0m
+  [4;35;1mQueryLocation Load (0.3ms)[0m   [0mSELECT * FROM `query_locations` WHERE (`query_locations`.`ip` = '127.0.0.1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQueryLocation Update (0.2ms)[0m   [0mUPDATE `query_locations` SET `updated_at` = '2010-04-15 16:23:10', `query_count` = 3 WHERE `id` = 2[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 16ms (View: 3, DB: 6) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 12:23:11) [GET]
+  Parameters: {"lng"=>"-71.1159683", "lat"=>"42.4083349"}
+  [4;35;1mHistoricPlace Load (209.0ms)[0m   [0mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3 ORDER BY calc[0m
+  [4;36;1mHistoricPlace Columns (4.5ms)[0m   [0;1mSHOW FIELDS FROM `historic_places`[0m
+Completed in 250ms (View: 12, DB: 214) | 200 OK [http://localhost/historic_places?lat=42.4083349&lng=-71.1159683]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryLocationsController#index to xml (for 127.0.0.1 at 2010-04-15 12:23:15) [GET]
+  [4;35;1mQueryLocation Load (0.5ms)[0m   [0mSELECT * FROM `query_locations` ORDER BY updated_at DESC LIMIT 10[0m
+  [4;36;1mQueryLocation Columns (3.6ms)[0m   [0;1mSHOW FIELDS FROM `query_locations`[0m
+Completed in 12ms (View: 3, DB: 4) | 200 OK [http://localhost/query_locations.xml]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 12:24:25) [GET]
+  [4;35;1mQueryLocation Columns (13.7ms)[0m   [0mSHOW FIELDS FROM `query_locations`[0m
+  [4;36;1mQueryLocation Load (1.0ms)[0m   [0;1mSELECT * FROM `query_locations` WHERE (`query_locations`.`ip` = '127.0.0.1') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQueryLocation Update (4.7ms)[0m   [0;1mUPDATE `query_locations` SET `updated_at` = '2010-04-15 16:24:25', `query_count` = 4 WHERE `id` = 2[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 36ms (View: 2, DB: 23) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 12:24:27) [GET]
+  Parameters: {"lng"=>"-71.1158562", "lat"=>"42.4079959"}
+  [4;36;1mHistoricPlace Load (202.4ms)[0m   [0;1mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4079959 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4079959 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1158562 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4079959 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4079959 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1158562 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3 ORDER BY calc[0m
+  [4;35;1mQueryLocation Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `query_locations`[0m
+  [4;36;1mQueryLocation Load (3.3ms)[0m   [0;1mSELECT * FROM `query_locations` WHERE (`query_locations`.`ip` = '127.0.0.1') LIMIT 1[0m
+  [4;35;1mHistoricPlace Columns (4.5ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 327ms (View: 87, DB: 214) | 200 OK [http://localhost/historic_places?lat=42.4079959&lng=-71.1158562]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryLocationsController#index to xml (for 127.0.0.1 at 2010-04-15 12:24:32) [GET]
+  [4;36;1mQueryLocation Load (0.5ms)[0m   [0;1mSELECT * FROM `query_locations` ORDER BY updated_at DESC LIMIT 10[0m
+  [4;35;1mQueryLocation Columns (3.6ms)[0m   [0mSHOW FIELDS FROM `query_locations`[0m
+Completed in 12ms (View: 4, DB: 4) | 200 OK [http://localhost/query_locations.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryLocationsController#index to xml (for 127.0.0.1 at 2010-04-15 12:24:45) [GET]
+  [4;36;1mQueryLocation Load (0.5ms)[0m   [0;1mSELECT * FROM `query_locations` ORDER BY updated_at DESC LIMIT 10[0m
+  [4;35;1mQueryLocation Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `query_locations`[0m
+Completed in 12ms (View: 3, DB: 4) | 200 OK [http://localhost/query_locations.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 12:24:48) [GET]
+  [4;36;1mQueryLocation Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `query_locations`[0m
+  [4;35;1mQueryLocation Load (2.0ms)[0m   [0mSELECT * FROM `query_locations` WHERE (`query_locations`.`ip` = '127.0.0.1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQueryLocation Update (0.3ms)[0m   [0mUPDATE `query_locations` SET `updated_at` = '2010-04-15 16:24:48', `query_count` = 5 WHERE `id` = 2[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/historic_places
+Rendering historic_places/index
+Completed in 20ms (View: 3, DB: 9) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 12:24:50) [GET]
+  Parameters: {"lng"=>"-71.1159683", "lat"=>"42.4083349"}
+  [4;35;1mHistoricPlace Load (194.5ms)[0m   [0mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3 ORDER BY calc[0m
+  [4;36;1mQueryLocation Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `query_locations`[0m
+  [4;35;1mQueryLocation Load (1.5ms)[0m   [0mSELECT * FROM `query_locations` WHERE (`query_locations`.`ip` = '127.0.0.1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQueryLocation Update (0.3ms)[0m   [0mUPDATE `query_locations` SET `updated_at` = '2010-04-15 16:24:50', `lat` = 42.4083349, `lng` = -71.1159683, `query_count` = 6 WHERE `id` = 2[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHistoricPlace Columns (7.2ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 248ms (View: 10, DB: 207) | 200 OK [http://localhost/historic_places?lat=42.4083349&lng=-71.1159683]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryLocationsController#index to xml (for 127.0.0.1 at 2010-04-15 12:24:53) [GET]
+  [4;36;1mQueryLocation Load (0.5ms)[0m   [0;1mSELECT * FROM `query_locations` ORDER BY updated_at DESC LIMIT 10[0m
+  [4;35;1mQueryLocation Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `query_locations`[0m
+Completed in 11ms (View: 3, DB: 4) | 200 OK [http://localhost/query_locations.xml]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#index (for 127.0.0.1 at 2010-04-15 12:25:02) [GET]
+  Parameters: {"lng"=>"-71.1159683", "lat"=>"42.4083349"}
+  [4;36;1mHistoricPlace Load (125.5ms)[0m   [0;1mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3 ORDER BY calc[0m
+  [4;35;1mQueryLocation Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `query_locations`[0m
+  [4;36;1mQueryLocation Load (0.6ms)[0m   [0;1mSELECT * FROM `query_locations` WHERE (`query_locations`.`ip` = '127.0.0.1') LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mQueryLocation Update (0.6ms)[0m   [0;1mUPDATE `query_locations` SET `updated_at` = '2010-04-15 16:25:02', `query_count` = 7 WHERE `id` = 2[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHistoricPlace Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `historic_places`[0m
+Completed in 255ms (View: 12, DB: 135) | 200 OK [http://localhost/historic_places?lat=42.4083349&lng=-71.1159683]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-15 12:29:07) [GET]
+
+ActionController::RoutingError (No route matches "/jqt/themes/jqt/img/bg_row_select.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-15 12:29:07) [GET]
+
+ActionController::RoutingError (No route matches "/jqt/themes/jqt/img/chevron_white.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#mobile (for 127.0.0.1 at 2010-04-15 12:29:13) [GET]
+  Parameters: {"lng"=>"-71.1159683", "lat"=>"42.4083349"}
+  [4;35;1mHistoricPlace Load (84.4ms)[0m   [0mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3 ORDER BY calc[0m
+  [4;36;1mQueryLocation Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `query_locations`[0m
+  [4;35;1mQueryLocation Load (0.7ms)[0m   [0mSELECT * FROM `query_locations` WHERE (`query_locations`.`ip` = '127.0.0.1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQueryLocation Update (0.4ms)[0m   [0mUPDATE `query_locations` SET `updated_at` = '2010-04-15 16:29:13', `query_count` = 8 WHERE `id` = 2[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+Rendering historic_places/mobile
+  [4;35;1mHistoricPlace Columns (3.6ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+Completed in 115ms (View: 3, DB: 94) | 200 OK [http://localhost/historic_places/mobile/?lat=42.4083349&lng=-71.1159683]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryLocationsController#mobile (for 127.0.0.1 at 2010-04-15 12:29:18) [GET]
+  [4;36;1mQueryLocation Load (0.5ms)[0m   [0;1mSELECT * FROM `query_locations` ORDER BY updated_at DESC LIMIT 10[0m
+Rendering query_locations/mobile
+  [4;35;1mQueryLocation Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `query_locations`[0m
+Completed in 15ms (View: 6, DB: 4) | 200 OK [http://localhost/query_locations/mobile/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-15 12:32:06) [GET]
+
+ActionController::RoutingError (No route matches "/jqt/themes/jqt/img/bg_row_select.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-15 12:32:06) [GET]
+
+ActionController::RoutingError (No route matches "/jqt/themes/jqt/img/chevron_white.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HistoricPlacesController#mobile (for 127.0.0.1 at 2010-04-15 12:32:14) [GET]
+  Parameters: {"lng"=>"-71.1159683", "lat"=>"42.4083349"}
+  [4;36;1mHistoricPlace Load (82.0ms)[0m   [0;1mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 3 ORDER BY calc[0m
+  [4;35;1mQueryLocation Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `query_locations`[0m
+  [4;36;1mQueryLocation Load (0.5ms)[0m   [0;1mSELECT * FROM `query_locations` WHERE (`query_locations`.`ip` = '127.0.0.1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQueryLocation Update (0.4ms)[0m   [0;1mUPDATE `query_locations` SET `updated_at` = '2010-04-15 16:32:14', `query_count` = 9 WHERE `id` = 2[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Rendering historic_places/mobile
+  [4;36;1mHistoricPlace Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `historic_places`[0m
+Completed in 114ms (View: 4, DB: 90) | 200 OK [http://localhost/historic_places/mobile/?lat=42.4083349&lng=-71.1159683]

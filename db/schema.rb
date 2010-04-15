@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100412053002) do
+ActiveRecord::Schema.define(:version => 20100415053003) do
 
   create_table "historic_places", :force => true do |t|
     t.string   "title"
@@ -24,7 +24,9 @@ ActiveRecord::Schema.define(:version => 20100412053002) do
     t.string   "ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "query_count", :default => 1
+    t.integer  "query_count",                                 :default => 1
+    t.decimal  "lat",         :precision => 15, :scale => 10
+    t.decimal  "lng",         :precision => 15, :scale => 10
   end
 
   create_table "visitors", :force => true do |t|

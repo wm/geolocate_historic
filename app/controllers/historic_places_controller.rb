@@ -50,6 +50,12 @@ class HistoricPlacesController < ApplicationController
     @lng = params[:lng]
     if @lat && @lng
       @historic_places = HistoricPlace.find_places_within(params[:lat],params[:lng],DISTANCE)
+      @ql = QueryLocation.find_by_ip(ip)
+      @ql ||= QueryLocation.new
+      @ql.ip = ip
+      @ql.lat = @lat
+      @ql.lng = @lng
+      @ql.save
     else
       # Store the location or update it.
       @ql = QueryLocation.find_by_ip(ip)

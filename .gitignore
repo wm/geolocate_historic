@@ -1,4 +1,6 @@
 ./log
+./log/*
+./log/**
 ./tmp
 *.sqlite3
 ./config/database.yml

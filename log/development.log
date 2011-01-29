@@ -23017,3 +23017,32 @@ Completed in 114ms (View: 4, DB: 90) | 200 OK [http://localhost/historic_places/
   [4;36;1mHistoricPlace Load (95.2ms)[0m   [0;1mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 10 ORDER BY calc[0m
   [4;35;1mHistoricPlace Load (94.7ms)[0m   [0mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 10 ORDER BY calc[0m
   [4;36;1mHistoricPlace Load (94.9ms)[0m   [0;1mSELECT id,title,description,lat,lng,((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) as calc FROM historic_places GROUP BY id,title,description,lat,lng HAVING ((ACOS(SIN(42.4083349 * PI() / 180) * SIN(lat * PI() / 180) + COS(42.4083349 * PI() / 180) * COS(lat * PI() / 180) * COS((-71.1159683 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) <= 10 ORDER BY calc[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (156.7ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (290.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateHistoricPlaces (20100401013217)
+  [4;35;1mSQL (105.9ms)[0m   [0mCREATE TABLE `historic_places` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `lat` decimal(15,10), `lng` decimal(15,10), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100401013217')[0m
+Migrating to CreateQueryLocations (20100412033149)
+  [4;35;1mSQL (106.1ms)[0m   [0mCREATE TABLE `query_locations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100412033149')[0m
+Migrating to AddCountToQueryLocations (20100412053002)
+  [4;35;1mSQL (117.8ms)[0m   [0mALTER TABLE `query_locations` ADD `query_count` int(11) DEFAULT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100412053002')[0m
+Migrating to AddLatLngToQueryLocations (20100415053003)
+  [4;35;1mSQL (118.0ms)[0m   [0mALTER TABLE `query_locations` ADD `lat` decimal(15,10)[0m
+  [4;36;1mSQL (120.4ms)[0m   [0;1mALTER TABLE `query_locations` ADD `lng` decimal(15,10)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100415053003')[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mSHOW FIELDS FROM `historic_places`[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mdescribe `historic_places`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `historic_places`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mSHOW FIELDS FROM `query_locations`[0m
+  [4;35;1mSQL (11.2ms)[0m   [0mdescribe `query_locations`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW KEYS FROM `query_locations`[0m

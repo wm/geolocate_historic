@@ -29,11 +29,4 @@ ActiveRecord::Schema.define(:version => 20100415053003) do
     t.decimal  "lng",         :precision => 15, :scale => 10
   end
 
-  create_table "visitors", :force => true do |t|
-    t.decimal  "lat",        :precision => 15, :scale => 10
-    t.decimal  "lng",        :precision => 15, :scale => 10
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end

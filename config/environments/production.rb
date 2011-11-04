@@ -1,5 +1,5 @@
-# Google API key for http://will.heroku.com
-GAPI_KEY = "ABQIAAAASIU62soxGRmBBYZUgLu74xQBCB4ejOxzvsV68-yLL5UR5mea9hRoZgT5PSx4TAFYn17EtlgBgHSS5w"
+# Google API key for http://wmernagh.heroku.com
+GAPI_KEY = "ABQIAAAASIU62soxGRmBBYZUgLu74xRkPQQKnFOd8CHvKULCaPFqB_-vQRRnO3pONJCY_Z7DE9PtJDvTmD93eg"
 
 config.cache_classes = true
 config.action_controller.consider_all_requests_local = false
